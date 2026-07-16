@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">RE-TS Yuri's Revenge game lockup</title>
+  <desc id="desc">The canonical neutral RE-TS wordmark over the solid layered Yuri insignia without a separate backing emblem.</desc>
+  <defs>
+    <linearGradient id="goldFace" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0a2" /><stop offset="0.25" stop-color="#f6cf58" /><stop offset="0.5" stop-color="#ffe992" /><stop offset="0.75" stop-color="#bd8418" /><stop offset="1" stop-color="#f5d35d" /></linearGradient>
+    <linearGradient id="goldDepth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bf8214" /><stop offset="0.5" stop-color="#704000" /><stop offset="1" stop-color="#321d00" /></linearGradient>
+    <linearGradient id="orangeFace" x1="0" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#ffc12d" /><stop offset="0.18" stop-color="#f47a0a" /><stop offset="0.43" stop-color="#ff9b13" /><stop offset="0.69" stop-color="#e74e00" /><stop offset="1" stop-color="#ff8d0b" /></linearGradient>
+    <linearGradient id="orangeDepth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a14300" /><stop offset="0.5" stop-color="#5c2100" /><stop offset="1" stop-color="#241008" /></linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="140%" height="150%" color-interpolation-filters="sRGB"><feDropShadow dx="4" dy="8" stdDeviation="4" flood-color="#000" flood-opacity="0.82" /></filter>
+    <filter id="grain" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.022 0.18" numOctaves="3" seed="41" result="noise" /><feColorMatrix in="noise" type="saturate" values="0.35" result="coloredNoise" /><feComponentTransfer in="coloredNoise" result="fadedNoise"><feFuncA type="table" tableValues="0 0.16" /></feComponentTransfer><feComposite in="fadedNoise" in2="SourceAlpha" operator="in" result="clippedNoise" /><feBlend in="SourceGraphic" in2="clippedNoise" mode="soft-light" /></filter>
+    <g id="rShape" transform="translate(154 190) scale(1.14) translate(-2477.90 -662.92)"><path fill-rule="evenodd" d="M2654.57 736.70C2652.09 738.73 2648.68 740.26 2644.38 741.32C2640.07 742.38 2635.27 743.07 2629.97 743.40C2624.67 743.74 2619.21 743.91 2613.58 743.92H2604.13L2604.08 712.92H2614.52C2620.48 712.89 2626.11 713.05 2631.42 713.36C2636.71 713.67 2641.36 714.39 2645.34 715.51C2649.31 716.64 2652.46 718.21 2654.79 720.22C2657.10 722.24 2658.27 725.03 2658.28 728.58C2658.28 731.97 2657.05 734.68 2654.57 736.70ZM2737.32 766.72C2746.42 764.13 2753.97 760.96 2759.92 757.24C2765.88 753.51 2770.26 749.14 2773.06 744.13C2775.87 739.12 2777.27 733.14 2777.26 726.19C2777.24 714.72 2773.07 704.96 2764.79 696.90C2756.48 688.84 2745.21 682.28 2730.96 677.21C2716.70 672.15 2700.12 668.50 2681.24 666.27C2662.35 664.04 2656.50 662.92 2635.30 662.95L2477.90 663.22L2478.22 849.49L2604.31 849.28L2604.19 780.05L2661.14 849.18L2802.98 848.94L2716.86 771.54C2724.40 770.04 2731.30 768.44 2737.32 766.72Z" /></g>
+    <g id="eShape" transform="translate(545 190) scale(1.14) translate(-2146.62 -662.73)"><path d="M2146.62 663.21L2431.30 662.73L2431.38 711.72L2283.88 711.97L2283.91 729.75L2431.41 729.49L2431.49 776.11L2283.99 776.36L2284.02 793.96L2431.23 793.71L2431.32 848.94L2146.94 849.43Z" /></g>
+    <path id="tShape" transform="translate(13 -35)" d="M185 488H492L465 553H369V766H268V553H154Z" />
+    <path id="sShape" transform="translate(-12 -35)" d="M537 488H864L839 553H654V600H860V766H521L553 708H736V663H537Z" />
+    <linearGradient id="yrYuri_yuriBlackMetal" x1="0" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#55505e" /><stop offset="0.2" stop-color="#121018" /><stop offset="0.44" stop-color="#35313d" /><stop offset="0.72" stop-color="#08070b" /><stop offset="1" stop-color="#27232e" /></linearGradient>
+    <linearGradient id="yrYuri_yuriSteel" x1="0.05" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#f0eef4" /><stop offset="0.18" stop-color="#777582" /><stop offset="0.42" stop-color="#c9c8d0" /><stop offset="0.7" stop-color="#3d3b45" /><stop offset="1" stop-color="#8f8d98" /></linearGradient>
+    <linearGradient id="yrYuri_yuriSteelDepth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#575461" /><stop offset="0.55" stop-color="#1d1a24" /><stop offset="1" stop-color="#07060a" /></linearGradient>
+    <filter id="yrYuri_crestShadow" x="-20%" y="-20%" width="150%" height="160%" color-interpolation-filters="sRGB"><feDropShadow dx="5" dy="9" stdDeviation="6" flood-color="#000" flood-opacity="0.88" /></filter>
+    <filter id="yrYuri_violetGlow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="7" result="blur" /><feFlood flood-color="#a83ce8" flood-opacity="0.92" result="color" /><feComposite in="color" in2="blur" operator="in" result="glow" /><feMerge><feMergeNode in="glow" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+  </defs>
+
+  <!-- Exact approved Yuri insignia placement, without the faction-theme backing plate. -->
+  <g id="yurisRevengeInsigniaOnly">
+    <g id="yrYuri_yuriInsignia" transform="translate(5 -210) scale(1.35)" filter="url(#yrYuri_crestShadow)"><path transform="translate(7 9)" d="M79.285714 295.21935L95 273.79078H638.57143C683.62928 322.68221 672.67068 382.41779 646.07844 435.86889C605.59556 517.24054 496.24431 577.29664 458.57143 595.93363L392.14286 788.07649H365.71429L299.28571 593.79078Z" fill="#060408" stroke="#351044" stroke-width="21" stroke-linejoin="round" /><path d="M79.285714 295.21935L95 273.79078H638.57143C683.62928 322.68221 672.67068 382.41779 646.07844 435.86889C605.59556 517.24054 496.24431 577.29664 458.57143 595.93363L392.14286 788.07649H365.71429L299.28571 593.79078Z" fill="url(#yrYuri_yuriBlackMetal)" stroke="#1c0c27" stroke-width="19" stroke-linejoin="round" /><path d="M79.285714 295.21935L95 273.79078H638.57143C683.62928 322.68221 672.67068 382.41779 646.07844 435.86889C605.59556 517.24054 496.24431 577.29664 458.57143 595.93363L392.14286 788.07649H365.71429L299.28571 593.79078Z" fill="none" stroke="#a83ce8" stroke-width="9" stroke-linejoin="round" filter="url(#yrYuri_violetGlow)" /><g transform="translate(5 7)" fill="url(#yrYuri_yuriSteelDepth)" stroke="#09070c" stroke-width="9" stroke-linejoin="round"><path d="M146.0522 309.82195L272.33792 309.8222L330.63633 562.11965Z" /><path d="M313 309.8222H443.42857L377.49492 705.66279Z" /><path d="M483.34735 309.8222L473.38325 380.82595C611.87722 369.03567 522.55188 499.40087 471.98186 549.28353C619.81034 473.56493 704.55591 310.27272 483.34735 309.8222Z" /></g><path d="M146.0522 309.82195L272.33792 309.8222L330.63633 562.11965Z" fill="url(#yrYuri_yuriSteel)" stroke="#b38cc8" stroke-width="5" stroke-linejoin="round" /><path d="M313 309.8222H443.42857L377.49492 705.66279Z" fill="url(#yrYuri_yuriSteel)" stroke="#b38cc8" stroke-width="5" stroke-linejoin="round" /><path d="M483.34735 309.8222L473.38325 380.82595C611.87722 369.03567 522.55188 499.40087 471.98186 549.28353C619.81034 473.56493 704.55591 310.27272 483.34735 309.8222Z" fill="url(#yrYuri_yuriSteel)" stroke="#b38cc8" stroke-width="5" stroke-linejoin="round" /></g>
+  </g>
+
+  <!-- Neutral canonical wordmark. -->
+  <g id="yurisRevengeGameWordmark" transform="translate(0 48)">
+    <g fill-rule="evenodd" stroke-linejoin="round" filter="url(#shadow)">
+      <use href="#rShape" transform="translate(7 9)" fill="url(#goldDepth)" stroke="#160e02" stroke-width="8"/>
+      <use href="#eShape" transform="translate(7 9)" fill="url(#goldDepth)" stroke="#160e02" stroke-width="8"/>
+    </g>
+    <g fill="url(#goldFace)" fill-rule="evenodd" stroke="#7c4b08" stroke-width="5" stroke-linejoin="round" filter="url(#grain)">
+      <use href="#rShape"/><use href="#eShape"/>
+    </g>
+    <g fill="none" stroke="#fff0a1" stroke-width="2.5" stroke-linejoin="round" opacity="0.88">
+      <use href="#rShape"/><use href="#eShape"/>
+    </g>
+    <g stroke-linejoin="miter" filter="url(#shadow)">
+      <use href="#tShape" transform="translate(7 9)" fill="url(#orangeDepth)" stroke="#160b04" stroke-width="8"/>
+      <use href="#sShape" transform="translate(7 9)" fill="url(#orangeDepth)" stroke="#160b04" stroke-width="8"/>
+    </g>
+    <g fill="url(#orangeFace)" stroke="#6f2a00" stroke-width="5" stroke-linejoin="miter" filter="url(#grain)">
+      <use href="#tShape"/><use href="#sShape"/>
+    </g>
+    <g fill="none" stroke="#ffb72c" stroke-width="2.5" stroke-linejoin="miter" opacity="0.9">
+      <use href="#tShape"/><use href="#sShape"/>
+    </g>
+  </g>
+</svg>

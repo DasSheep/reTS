@@ -1,0 +1,8 @@
+{
+  "label": "For modders",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "The planned native authoring direction and current implementation status."
+  }
+}

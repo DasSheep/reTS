@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">RE-TS solid white wordmark</title>
+  <desc id="desc">Solid white single-color version of the canonical RE-TS lettering on a transparent background.</desc>
+  <defs>
+    <g id="rShape" transform="translate(154 190) scale(1.14) translate(-2477.90 -662.92)">
+      <path fill-rule="evenodd" d="M2654.57 736.70C2652.09 738.73 2648.68 740.26 2644.38 741.32C2640.07 742.38 2635.27 743.07 2629.97 743.40C2624.67 743.74 2619.21 743.91 2613.58 743.92H2604.13L2604.08 712.92H2614.52C2620.48 712.89 2626.11 713.05 2631.42 713.36C2636.71 713.67 2641.36 714.39 2645.34 715.51C2649.31 716.64 2652.46 718.21 2654.79 720.22C2657.10 722.24 2658.27 725.03 2658.28 728.58C2658.28 731.97 2657.05 734.68 2654.57 736.70ZM2737.32 766.72C2746.42 764.13 2753.97 760.96 2759.92 757.24C2765.88 753.51 2770.26 749.14 2773.06 744.13C2775.87 739.12 2777.27 733.14 2777.26 726.19C2777.24 714.72 2773.07 704.96 2764.79 696.90C2756.48 688.84 2745.21 682.28 2730.96 677.21C2716.70 672.15 2700.12 668.50 2681.24 666.27C2662.35 664.04 2656.50 662.92 2635.30 662.95L2477.90 663.22L2478.22 849.49L2604.31 849.28L2604.19 780.05L2661.14 849.18L2802.98 848.94L2716.86 771.54C2724.40 770.04 2731.30 768.44 2737.32 766.72Z"/>
+    </g>
+    <g id="eShape" transform="translate(545 190) scale(1.14) translate(-2146.62 -662.73)">
+      <path d="M2146.62 663.21L2431.30 662.73L2431.38 711.72L2283.88 711.97L2283.91 729.75L2431.41 729.49L2431.49 776.11L2283.99 776.36L2284.02 793.96L2431.23 793.71L2431.32 848.94L2146.94 849.43Z"/>
+    </g>
+    <path id="tShape" transform="translate(13 -35)" d="M185 488H492L465 553H369V766H268V553H154Z"/>
+    <path id="sShape" transform="translate(-12 -35)" d="M537 488H864L839 553H654V600H860V766H521L553 708H736V663H537Z"/>
+  </defs>
+  <g fill="#ffffff" fill-rule="evenodd" stroke="none">
+    <use href="#rShape"/>
+    <use href="#eShape"/>
+  </g>
+  <g fill="#ffffff" stroke="none">
+    <use href="#tShape"/>
+    <use href="#sShape"/>
+  </g>
+</svg>

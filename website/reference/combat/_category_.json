@@ -1,0 +1,8 @@
+{
+  "label": "Combat",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Verified combat mechanics of the original engine \u2014 damage, armor, warheads, and hit-point application."
+  }
+}

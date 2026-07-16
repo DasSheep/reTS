@@ -1,0 +1,61 @@
+/* reTS site theme. The accent derives from the NEUTRAL semantic theme tokens
+   (the brand token system's single source of truth): neutral primary
+   #795000 on light / #F1CA63 on dark. Ramps are the standard Infima steps off
+   those bases; both clear WCAG AA on the site's backgrounds (7.1:1 on #fff,
+   11.0:1 on #1b1b1d). Faction/game palettes are a future opt-in layer. */
+:root {
+  --ifm-color-primary: #795000;
+  --ifm-color-primary-dark: #6e4800;
+  --ifm-color-primary-darker: #674400;
+  --ifm-color-primary-darkest: #553800;
+  --ifm-color-primary-light: #89651f;
+  --ifm-color-primary-lighter: #91702e;
+  --ifm-color-primary-lightest: #a78c57;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlight-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #f1ca63;
+  --ifm-color-primary-dark: #dab75a;
+  --ifm-color-primary-darker: #cead55;
+  --ifm-color-primary-darkest: #a98d45;
+  --ifm-color-primary-light: #f3d076;
+  --ifm-color-primary-lighter: #f4d47f;
+  --ifm-color-primary-lightest: #f6dc98;
+  --docusaurus-highlight-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Progress-tracker bars (the generated homepage block). Native <progress>
+   restyled: consistent cross-platform rendering where glyph-based bars are
+   not (block-element glyph heights differ per font). Theme-aware via the
+   Infima variables above. */
+progress.tracker {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10rem;
+  height: 0.65rem;
+  vertical-align: middle;
+  border: 0;
+  border-radius: 0.35rem;
+  overflow: hidden;
+  background-color: var(--ifm-color-emphasis-200);
+}
+progress.tracker::-webkit-progress-bar {
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: 0.35rem;
+}
+progress.tracker::-webkit-progress-value {
+  background-color: var(--ifm-color-primary);
+  border-radius: 0.35rem;
+  transition: width 0.3s ease;
+}
+progress.tracker::-moz-progress-bar {
+  background-color: var(--ifm-color-primary);
+  border-radius: 0.35rem;
+}
+progress.tracker-overall {
+  width: 100%;
+  max-width: 28rem;
+  height: 0.9rem;
+}
