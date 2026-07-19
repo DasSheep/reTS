@@ -24,14 +24,14 @@ extensions can build on it.
 <!-- progress:start -->
 <!-- Generated from the project's progress tracker - do not hand-edit this block. -->
 
-**≈18%** of the way to a fully-playable, faithful Red Alert 2 / Yuri's Revenge engine, end to end *(excludes mod-compatibility scope)*.
+**≈19%** of the way to a fully-playable, faithful Red Alert 2 / Yuri's Revenge engine, end to end *(excludes mod-compatibility scope)*.
 
-<progress className="tracker tracker-overall" value="18" max="100" />
+<progress className="tracker tracker-overall" value="19" max="100" />
 
 | Area | | Done |
 |------|---|----:|
 | Foundations & harness | <progress className="tracker" value="85" max="100" /> | 85% |
-| Primitives (math / RNG / coords / time) | <progress className="tracker" value="90" max="100" /> | 90% |
+| Primitives (math / RNG / coords / time) | <progress className="tracker" value="92" max="100" /> | 92% |
 | Data & rules interpretation (INI / inheritance) | <progress className="tracker" value="34" max="100" /> | 34% |
 | Asset formats (MIX / SHP / VXL / TMP / PAL / CSF / maps) | <progress className="tracker" value="23" max="100" /> | 23% |
 | Object model & world grid | <progress className="tracker" value="24" max="100" /> | 24% |
@@ -39,7 +39,7 @@ extensions can build on it.
 | Combat (weapons / projectiles / targeting / veterancy) | <progress className="tracker" value="40" max="100" /> | 40% |
 | Unit & building sim (production / power / deploy / SW) | <progress className="tracker" value="18" max="100" /> | 18% |
 | Economy (harvest / refine / tech tree) | <progress className="tracker" value="12" max="100" /> | 12% |
-| House & skirmish AI (build order / teams / triggers) | <progress className="tracker" value="8" max="100" /> | 8% |
+| House & skirmish AI (build order / teams / triggers) | <progress className="tracker" value="10" max="100" /> | 10% |
 | Campaign / scenario (triggers / tags / objectives) | <progress className="tracker" value="13" max="100" /> | 13% |
 | Presentation / rendering (iso / SHP / VXL / shroud) | <progress className="tracker" value="4" max="100" /> | 4% |
 | Audio (SFX / EVA / music) | <progress className="tracker" value="12" max="100" /> | 12% |
@@ -55,7 +55,7 @@ extensions can build on it.
 | Parameterization (de-hardcoded reversed limits) | <progress className="tracker" value="0" max="100" /> | 0% |
 | Modernization (code / assets / presentation / modding) | <progress className="tracker" value="1" max="100" /> | 1% |
 
-<sub>A deliberately **conservative**, best-judgment estimate — only behavior that is fully recovered from the original engine, reimplemented, and verified against it counts; scaffolding, partial traces, and work-in-progress do not. It is an at-a-glance gauge, not an objective measure and not a schedule. Last updated: 2026-07-19.</sub>
+<sub>A deliberately **conservative**, best-judgment estimate — only behavior that is fully recovered from the original engine, reimplemented, and verified against it counts; scaffolding, partial traces, and work-in-progress do not. It is an at-a-glance gauge, not an objective measure and not a schedule. Last updated: 2026-07-20.</sub>
 <!-- progress:end -->
 
 ## Explore
