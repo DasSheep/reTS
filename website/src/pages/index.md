@@ -38,14 +38,14 @@ extensions can build on it.
 | Movement & locomotion | <progress className="tracker" value="27" max="100" /> | 27% |
 | Combat (weapons / projectiles / targeting / veterancy) | <progress className="tracker" value="40" max="100" /> | 40% |
 | Unit & building sim (production / power / deploy / SW) | <progress className="tracker" value="17" max="100" /> | 17% |
-| Economy (harvest / refine / tech tree) | <progress className="tracker" value="11" max="100" /> | 11% |
+| Economy (harvest / refine / tech tree) | <progress className="tracker" value="12" max="100" /> | 12% |
 | House & skirmish AI (build order / teams / triggers) | <progress className="tracker" value="5" max="100" /> | 5% |
 | Campaign / scenario (triggers / tags / objectives) | <progress className="tracker" value="13" max="100" /> | 13% |
 | Presentation / rendering (iso / SHP / VXL / shroud) | <progress className="tracker" value="4" max="100" /> | 4% |
 | Audio (SFX / EVA / music) | <progress className="tracker" value="12" max="100" /> | 12% |
 | Shell / UI (menus / sidebar / build queue) | <progress className="tracker" value="3" max="100" /> | 3% |
 | Multiplayer / netcode (lobby / lockstep / replay) | <progress className="tracker" value="2" max="100" /> | 2% |
-| Save-load & game loop | <progress className="tracker" value="15" max="100" /> | 15% |
+| Save-load & game loop | <progress className="tracker" value="16" max="100" /> | 16% |
 
 **Layered scope** — additive, opt-in on the faithful core *(not counted in the engine % above)*.
 

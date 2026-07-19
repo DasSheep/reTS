@@ -155,6 +155,61 @@ late fields sit a further eight bytes earlier. The ancestor engine is missing
 two fields its descendants added — invisible unless you refuse to trust a
 plausible answer.
 
+## The evening shift: weather, tiberium, and loot
+
+A second orchestrated pass the same day emptied most of what was left on the
+tick's roster: the tiberium growth and spread sweeps, the lightning storm,
+the crate system, an alpha-fade cleanup sweep, and a 120-frame full-map
+shroud refresh. Fourteen of the tick's stage bodies are now reversed end to
+end, and the evening's finds were some of the best yet.
+
+Tiberium regrowth looks innocent — a timer per resource type, fire when due,
+re-arm. The adversarial re-read killed the innocent version. The number of
+cells processed per firing is a two-stage computation: first a deterministic
+bound derived from how many cells are queued times the type's growth
+percentage (clamped to 5–50), *then* a random draw modulo that bound, plus
+one. And every candidate cell drawn after that consumes a *second* random
+number to build a float-scored priority heap. None of this matters visually.
+All of it matters for lockstep: consume one draw too few and two machines'
+random streams diverge, and with them every combat roll for the rest of the
+match. The re-arm interval itself runs through floating-point — an integer
+growth rate times 0.3 (or 1.0, depending on a scenario flag), truncated —
+one more place where the fidelity of a single rounding mode is load-bearing.
+
+The lightning storm turned out to be a shared ticker for a whole family of
+screen-state machines — the storm itself plus the nuke flash fade, and in
+Yuri's Revenge two more siblings the earlier games don't wire in here. Its
+best secret hid in a branch both readers missed and the final principal pass
+caught: the storm's shutdown code is only *reachable* when the list of live
+storm clouds is empty. A storm whose duration expires stops striking
+immediately — but it keeps its stormy lighting until the last cloud
+animation finishes playing, because the finalize block sits behind the
+walk's early-out. And when it finally does shut down, control falls straight
+through into the countdown for the *next* queued storm, which can promote on
+that very tick. Timing like that is invisible in normal play and decisive in
+a replay diff.
+
+The crate system is the most determinism-hostile stage so far. Placing one
+crate may burn up to a thousand retry attempts, two random draws each, then
+one final draw to arm the respawn timer — uniform over a window from 450 to
+1800 times a rules constant, computed in doubles. The oracle test for that
+window failed on first run: we had hand-derived the top of the range as
+unreachable, the way the formula reads on paper. The actual byte pattern of
+the scale constant is not exactly the power of two it plays on TV — it's
+larger by one part in a billion, just enough that the maximum draw rounds up
+to the full upper bound. The failing test is the workflow doing its job:
+the binary is the spec, and it disagreed with our arithmetic until we read
+the constant's actual bytes.
+
+Cross-version, the evening delivered two clean negative results. Tiberian
+Sun's ion storm is not an earlier draft of the lightning storm — it is a
+different machine entirely: a per-tick probability roll instead of fixed
+strike cadences, target selection that scans live units first and falls back
+to random cells, and none of the cloud-then-bolt choreography. The lineage
+rewrote the weather wholesale. And the 120-frame map refresh simply does not
+exist in Tiberian Sun — it is a RA2-era addition, one more entry in the
+growing list of things the descendants bolted onto the same tick spine.
+
 ## Why this order of work
 
 Everything above feeds one goal: a playable skirmish that stays bit-identical
