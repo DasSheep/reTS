@@ -210,6 +210,68 @@ rewrote the weather wholesale. And the 120-frame map refresh simply does not
 exist in Tiberian Sun — it is a RA2-era addition, one more entry in the
 growing list of things the descendants bolted onto the same tick spine.
 
+## Night: the last unnamed stages
+
+By the end of the day the tick had four stages left with no reversed body
+behind them: two odd loops that iterate their arrays *backward*, the
+production sweep, and the camera update. A final pass — five reverse lanes,
+five dedicated skeptics, and a principal read of every instruction in the
+longest body — closed all four.
+
+The Floating Disc's laser turned out to be a wound-up toy rather than a
+weapon. Firing computes the bearing to the target, rotates it a half turn,
+and hands the rest to a nine-beat state machine: two beam arms sweep around
+the disc in opposite directions, one step per activation, and geometry does
+the scheduling — the arms land on the same facing exactly at step eight.
+That converged beat draws the single real beam, applies the single damage
+event, plays the report sound, and marks the object for the end-of-frame
+grave we mapped this morning. Every intermediate beam is a purely visual
+object with its own lifetime sweep — and every beam allocation is guarded
+so that an out-of-memory frame silently drops the *visual* while damage and
+state march on. The renderer is allowed to fail; the simulation is not.
+
+The backward loops finally explained themselves. Radiation sites count
+their lifetime down every frame, and when it hits zero the site deletes
+itself *right there*, mid-walk — and the destructor compacts the array by
+shifting every later element down one slot. Walk that array forward and a
+self-deletion makes you skip a neighbor; walk it backward and every shifted
+element is already behind you. The engine's two backward walks are exactly
+the two subsystems whose members die mid-iteration. We had the shift-down
+mechanism only as community folklore until the destructor's disassembly
+showed the literal copy loop. The same site fades its glow as it decays —
+and the fade's skip-if-unchanged check carries a genuine retail bug: it
+compares the stored red channel against the incoming red *and* the incoming
+blue, and never looks at green. Faithfully reproduced, quirk toggle and all.
+
+The production stage is the answer to a trivia question every fan knows:
+the build clock has 54 steps. Now it's not trivia — the constant sits in
+the comparison instruction in all three games. Each due tick charges the
+remaining balance divided by the remaining steps, rounding down, and the
+final step sweeps the exact remainder, so a completed build never over- or
+under-pays by a cent. If your funds run dry the step quietly rolls back —
+but the progress-changed flag stays raised and the timer has already been
+rewound, so a stall costs a full interval and briefly lies to the sidebar.
+The money check itself goes through a COM interface embedded inside the
+house object, with a calling convention the decompiler renders identically
+to a normal method call — the exact trap our call-site discipline exists
+to catch. And Tiberian Sun's version never touches the on-hold flag at
+all: an actual behavioral gap between the generations, not just the usual
+field reshuffling.
+
+The camera stage closed as a verdict rather than a port. The class behind
+it has no runtime type information anywhere, so the lanes chased the
+singleton's construction to recover its method tables in all three games —
+and found the per-frame body is pure presentation: smooth-scroll easing,
+viewport clamping, dirty-flag bookkeeping, and a screen-shake timer driven
+by the *wall clock*. That last fact matters enormously for lockstep: it is
+the only nondeterminism in the stage, and it can never touch game state.
+The simulation spine now records that stage as a documented client-side
+no-op instead of an unexamined hole.
+
+With that, every stage in the per-frame dispatch has either a reversed,
+test-pinned body or a pinned classification. The frame is no longer a
+list of mysteries in a known order — it is a list of mechanisms.
+
 ## Why this order of work
 
 Everything above feeds one goal: a playable skirmish that stays bit-identical
