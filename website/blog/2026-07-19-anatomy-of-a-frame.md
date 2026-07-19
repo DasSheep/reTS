@@ -114,6 +114,47 @@ burned twice before by convention misreads that only a live crash exposed;
 this one was caught on paper, by stacking three independent readers against
 each other and believing none of them until the bytes agreed.
 
+## Evening addendum: five more stages, and a ghost feature
+
+The same triple-reader discipline swept up the tick's middle stages by
+evening, and each layer of it caught something the others missed.
+
+The engine's dynamic lighting turns out to run on a genuinely clever budget
+system. When a light source changes, the affected map cells go into a
+backlog; each frame, the game grants the backlog a six-millisecond allowance
+of real wall-clock time, walking it behind a cursor that *persists across
+frames* — if time runs out mid-walk, the next frame resumes exactly where it
+stopped. To keep the timing overhead itself cheap, the clock is only polled
+every sixteenth cell. Only once the whole backlog is resolved does a second,
+unbudgeted phase apply everything to the map at once and refresh the display
+— once per batch, not once per cell. There's even a vestigial self-tuning
+governor at the end: if lighting resolution takes too long, it consults a
+hook that was compiled down to "always say no." A quality knob, wired up and
+then unplugged before shipping.
+
+Then the archaeology find of the day: the EMP pulse. All three engines run
+its per-frame update in the same tick position — and in both RA2 and Yuri's
+Revenge, the code that would ever *create* one has exactly zero callers.
+Proven dead, not folklore: exhaustive cross-reference on both binaries. In
+Tiberian Sun the same constructor has two live call sites gated by warhead
+flags — Firestorm's EMP was real, shipped content, and the two later engines
+carried the entire mechanism forward disconnected, faithfully executing an
+empty loop every frame for two decades. Our port pins the mechanism *and* the
+dead-in-two, alive-in-one verdict.
+
+The remaining pair — transient light flashes and laser beams — are small
+lifetime sweeps with personality. Both share a removal idiom where the loop,
+already holding an item's position, politely asks the array to search for the
+item anyway; both skip the class destructor and free memory raw. The laser
+timer even reproduces the exact "write compiler padding with stack garbage"
+quirk we first documented in the kamikaze tracker — same idiom, second
+sighting, all three binaries. And the cross-version check earned its keep
+one more time: the first reader claimed TS shares RA2's memory layout for
+the laser record; the adversarial re-read of the actual bytes showed TS's
+late fields sit a further eight bytes earlier. The ancestor engine is missing
+two fields its descendants added — invisible unless you refuse to trust a
+plausible answer.
+
 ## Why this order of work
 
 Everything above feeds one goal: a playable skirmish that stays bit-identical
