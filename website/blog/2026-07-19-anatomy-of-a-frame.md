@@ -282,3 +282,46 @@ from the machine code, so any drift in our implementation fails loudly. Next
 up: driving the live original through single frames and diffing its state
 against ours at each boundary — the dispatch order, confirmed by the only
 witness that can't be wrong.
+
+## Night shift: the house takes its turn
+
+*A late addendum — the day's third push closed the one stage body the
+morning's summary had to leave as "identity pinned, interior pending":
+the per-house update, the biggest single function in the tick.*
+
+Each faction — player, AI, or neutral — gets one call per frame to run
+its own housekeeping, and that function turns out to be the engine's
+town square. Power and radar outages re-check themselves through timers
+that deliberately fire one frame *early*, stopping themselves and
+raising a flag the real recompute reads next. Grudges between houses
+decay on a hundred-frame cadence and never quite reach zero — the floor
+is one, so an AI that has been attacked literally never fully forgives.
+Win, lose, and game-over are three flags sharing a single countdown, and
+before the engine will admit any of them it spins on a wall-clock budget
+waiting for queued EVA speech to finish — the announcer always gets the
+last word. The win and lose paths then set the main loop's exit flags
+with mappings that are exact mirror images of each other, and the lose
+flag itself is never cleared: a genuine little retail quirk, faithfully
+reproduced and test-pinned.
+
+The randomness archaeology mattered most. One block — present only in
+the third game of the family — rolls twice on a *separate*, non-synced
+random stream and then, on one branch, rolls once on the shared lockstep
+stream and throws the result away. If a reimplementation skips that
+discarded roll, every machine in a multiplayer match drifts out of sync
+from that frame on. Two more rolls hide inside the AI's team-building
+helper, and the AI's threat assessor draws its own next wake-up delay
+from the dice. All of it is now recorded in stream order.
+
+The oddest find: right after the function's return instruction sits a
+complete, working copy of its superweapon-sidebar sweep — that nothing
+ever calls. A whole-binary scan found zero references in two of the
+three games. The oldest game explains the corpse: there, the update
+*calls* that helper as a real subroutine. The dead copies in the later
+binaries are the fossil left behind when the compiler started inlining
+it — three shipped executables accidentally documenting their own build
+history.
+
+With the house body reversed, ported, and oracle-tested, the per-frame
+tick is now mechanisms end to end — the finale this morning's post was
+still owed.
