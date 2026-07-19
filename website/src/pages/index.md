@@ -45,7 +45,7 @@ extensions can build on it.
 | Audio (SFX / EVA / music) | <progress className="tracker" value="12" max="100" /> | 12% |
 | Shell / UI (menus / sidebar / build queue) | <progress className="tracker" value="3" max="100" /> | 3% |
 | Multiplayer / netcode (lobby / lockstep / replay) | <progress className="tracker" value="2" max="100" /> | 2% |
-| Save-load & game loop | <progress className="tracker" value="13" max="100" /> | 13% |
+| Save-load & game loop | <progress className="tracker" value="14" max="100" /> | 14% |
 
 **Layered scope** — additive, opt-in on the faithful core *(not counted in the engine % above)*.
 
