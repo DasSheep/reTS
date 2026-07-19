@@ -39,7 +39,7 @@ extensions can build on it.
 | Combat (weapons / projectiles / targeting / veterancy) | <progress className="tracker" value="40" max="100" /> | 40% |
 | Unit & building sim (production / power / deploy / SW) | <progress className="tracker" value="18" max="100" /> | 18% |
 | Economy (harvest / refine / tech tree) | <progress className="tracker" value="12" max="100" /> | 12% |
-| House & skirmish AI (build order / teams / triggers) | <progress className="tracker" value="6" max="100" /> | 6% |
+| House & skirmish AI (build order / teams / triggers) | <progress className="tracker" value="8" max="100" /> | 8% |
 | Campaign / scenario (triggers / tags / objectives) | <progress className="tracker" value="13" max="100" /> | 13% |
 | Presentation / rendering (iso / SHP / VXL / shroud) | <progress className="tracker" value="4" max="100" /> | 4% |
 | Audio (SFX / EVA / music) | <progress className="tracker" value="12" max="100" /> | 12% |

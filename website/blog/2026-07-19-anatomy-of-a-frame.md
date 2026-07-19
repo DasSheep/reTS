@@ -325,3 +325,44 @@ history.
 With the house body reversed, ported, and oracle-tested, the per-frame
 tick is now mechanisms end to end — the finale this morning's post was
 still owed.
+
+---
+
+**Late-night second addendum.** The frame anatomy opened a door, and we
+walked through it tonight: the six functions the house update dispatches
+into — the AI's actual decision layer — are now reversed, verified, and
+ported. What building to place next, whether to train a vehicle,
+infantryman, or aircraft, when to panic-sell, and which team to raise.
+
+The adversarial review pass justified itself immediately. The
+base-planning function's most load-bearing branch had been read exactly
+backwards in the first pass — success and failure swapped — which would
+have shipped an AI that cancels plans when they're viable and builds
+when they're not. Another reviewer discovered that the "grudge" helper
+doesn't just adjust one hostility score: it silently re-elects the AI's
+tracked enemy after *every* adjustment, and one of its two callers
+immediately overwrites the result, making half its work a faithful
+no-op.
+
+The three per-category production deciders turned out to be one
+function, copy-pasted per category: an instruction-level diff found
+exactly five substitutions and not a byte more. Their coin flip between
+"build what the teams need most" and "build something random" is scaled
+by a stored constant that sits a hair *above* the exact power of two it
+approximates — with the delightful consequence that one single roll
+value out of two billion still goes random even at a hundred-percent
+deterministic setting.
+
+Cross-version reconciliation delivered a real behavioral difference,
+not just shuffled field offsets: the middle game of the family evaluates
+its production dispatch every single frame, where the newest throttles
+it to every eighth. Same code shape, eight-times the decision cadence.
+And one detail all first-pass readers missed, caught by re-reading the
+raw bytes: when the AI is at its team budget, it sets a flag that gets
+handed straight into the map-scripted trigger conditions — the AI
+literally tells the mission logic "I'm full."
+
+Forty-five new oracle tests pin all of it. One large helper — the
+fallback that weighs alternate build plans, with its own data-dependent
+lockstep dice rolls — is the remaining blocker before this whole path
+is bit-exact, and it's next.
