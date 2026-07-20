@@ -224,3 +224,51 @@ imperfection we now reproduce on purpose: negative angles round *away* from
 the nearest entry, so sine of −90° lands two slots off from where a clean
 implementation would put it. The game has been slightly wrong, identically,
 on every machine, for twenty-five years — and now so are we.
+
+## Second addendum: the pathfinder that never was
+
+One more for the day, because it kept the streak of satisfying corrections
+going. The engine has a function whose community-known name says
+*pathfinding* — and it has nothing to do with routes. It's the **placement
+finder**: the routine every scattered infantryman, deploying vehicle,
+rallying factory, and teleport landing asks the same question — *"find me a
+valid cell near here."* Tonight it's fully reversed, along with all five of
+the helper predicates it composes.
+
+Its search is a square ring expanding outward from the start cell, each
+candidate run through a gauntlet: is the cell inside the playable diamond,
+can this unit's whole footprint stand there, is the ground close enough in
+height, is it clear to build on if asked. Collect up to twenty-four
+survivors, then pick. The pick is the fun part. If the caller named a
+target to be near, it's a straight nearest-wins scan through the engine's
+table square root. If the caller *didn't* — and here's the quirk — the
+engine takes the current **frame number modulo the candidate count**. Not
+the synchronized dice everything else uses: the frame counter. Every client
+computes the same frame, so lockstep survives, but the choice depends on
+*when* you ask, and the sentinel for "no preference" is cell (0,0) itself —
+the engine literally cannot express "put me near the map's origin corner."
+Better still: at ring radius zero, the scan's top and bottom edge
+generators both collapse onto the start cell, so the origin enters the
+candidate list *twice* and gets double weight in that modulo pick. Faithful
+means reproducing that too, toggle and all.
+
+The day's sharpest catch, though, was ours, not Westwood's. Re-deriving the
+playable-diamond bounds check from a fresh disassembly showed its first
+inequality is a *lower* bound — the pass condition points the other way
+from what our five-day-old notes said, and our shipped port had faithfully
+inherited the inverted reading. The port's tests never caught it because
+their expected values were hand-computed from the same wrong formula — a
+perfect specimen of the shared-misread failure mode our adversarial-verify
+process exists to kill. Fresh eyes on the raw instructions caught it; doc,
+port, and tests are all corrected. The lesson generalizes: a test is only
+as honest as the independence of the person who computed its answer.
+
+Also settled tonight: three mysterious team-configuration fields the AI's
+reachability gate reads turn out not to be map-author data at all — the
+engine *derives* them from a team's unit composition (what movement class
+the group shares, whether it's naval, whether it's a base-defense team,
+which skips the geography check entirely). The "can my base reach yours"
+question answers itself from what units the team wants to field. And the
+placement finder's cross-game story is tidy: Yuri's Revenge has the
+15-argument version, Red Alert 2 lacks one option, Tiberian Sun lacks two —
+three nested generations of the same machine, identical at the core.
