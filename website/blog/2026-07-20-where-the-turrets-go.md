@@ -126,3 +126,57 @@ reconnaissance. Next up: the map-wide placement scanner's interior, the
 remaining callee sweeps on the Tiberian Sun side, and wiring the live-binary
 oracle at the handful of spots where only a running original can settle the
 last doubts.
+
+## Evening addendum: inside the scanner, and a constant that lied
+
+The "next up" list from this morning didn't survive the evening. The map-wide
+placement scanner — the function that answers *"the candidate list is empty;
+where does the turret go now?"* — gave up its full interior, and it turned
+out to have three personalities.
+
+If the building being placed is **naval**, the scanner doesn't scan at all: it
+calls the game's actual pathfinder with the floating movement class, asks it
+for open water near the base center sized to a shipyard footprint, and then
+rejects anything farther from the house's first Construction Yard than a
+rules-configurable adjacency distance — the naval-yard adjacency knob modders
+know from the INI. If the base has no center yet, it just returns the base
+anchor. Otherwise it scores a per-house list of base-perimeter cells — through
+the threat grid, or by plain distance-to-base for cloak generators (support
+structures don't chase threat) — sorts, and walks the winners through a
+placement dance: look at all eight neighbors of a candidate, sum up the
+compass directions of the ones already reserved by this house's base, convert
+that *vector sum* into one of eight octants, and try to tuck the building on
+the corresponding side, offset by its foundation plus the AI base-spacing
+margin (plus one extra cell for buildings that want walls or elbow room — the
+rule names literally explain the +1).
+
+The hostile-review pass earned its keep three times over. Our own first
+reading said the neighbor scan "keeps the last match" — refuted; it's a
+running sum, which means a candidate with owned cells on *opposite* sides
+cancels to zero and gets skipped exactly as if it were isolated. A claimed
+uninitialized-memory argument turned out to be a deterministic zero hiding
+behind two disguised half-word writes. And the strangest find of the night:
+the whole attempt phase runs **twice**, and an exhaustive trace proved the
+second pass is byte-for-byte dead logic — a fossil the compiler faithfully
+preserved for twenty-five years. Our version runs it once and documents why.
+
+The headline, though, is a number. The constant that converts angles into the
+engine's 16-bit compass has been described — by us and by community lore —
+with a tidy formula: negative 65536 over 2π. A reviewer pulled the actual
+eight bytes out of the executable and did the arithmetic: the real formula is
+**negative 32767 over π**, off from the folklore by exactly 1/π. Our code
+already carried the correct extracted value, but any future cleanup that
+"simplified" the literal into the pretty formula would have quietly bent every
+angle computation in the game. The same session closed the other determinism
+door in that family: the engine's 4097-entry arctangent table is now embedded
+in our source verbatim, because we measured regeneration and it provably can't
+work — 4094 of the 4097 entries disagree with modern math libraries.
+
+Cross-game, the picture sharpened. Tiberian Sun's defense-placement brain
+passed its exhaustive audit: one gated random draw is its *entire* relationship
+with the dice — but its pick weighting quietly adds a cost bonus (cheap
+defenses get a leg up) that neither Red Alert 2 nor Yuri's Revenge has. Red
+Alert 2's scanner, meanwhile, dropped a safety check Yuri's Revenge has, and
+its team-builder family matches phase-for-phase down to the same pool size of
+ten and the same lottery order. Three engines, one function, three
+personalities — and the test suite now knows all three.
