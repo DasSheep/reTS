@@ -31,7 +31,7 @@ extensions can build on it.
 | Area | | Done |
 |------|---|----:|
 | Foundations & harness | <progress className="tracker" value="85" max="100" /> | 85% |
-| Primitives (math / RNG / coords / time) | <progress className="tracker" value="93" max="100" /> | 93% |
+| Primitives (math / RNG / coords / time) | <progress className="tracker" value="94" max="100" /> | 94% |
 | Data & rules interpretation (INI / inheritance) | <progress className="tracker" value="34" max="100" /> | 34% |
 | Asset formats (MIX / SHP / VXL / TMP / PAL / CSF / maps) | <progress className="tracker" value="23" max="100" /> | 23% |
 | Object model & world grid | <progress className="tracker" value="24" max="100" /> | 24% |
@@ -39,7 +39,7 @@ extensions can build on it.
 | Combat (weapons / projectiles / targeting / veterancy) | <progress className="tracker" value="40" max="100" /> | 40% |
 | Unit & building sim (production / power / deploy / SW) | <progress className="tracker" value="18" max="100" /> | 18% |
 | Economy (harvest / refine / tech tree) | <progress className="tracker" value="12" max="100" /> | 12% |
-| House & skirmish AI (build order / teams / triggers) | <progress className="tracker" value="11" max="100" /> | 11% |
+| House & skirmish AI (build order / teams / triggers) | <progress className="tracker" value="13" max="100" /> | 13% |
 | Campaign / scenario (triggers / tags / objectives) | <progress className="tracker" value="13" max="100" /> | 13% |
 | Presentation / rendering (iso / SHP / VXL / shroud) | <progress className="tracker" value="4" max="100" /> | 4% |
 | Audio (SFX / EVA / music) | <progress className="tracker" value="12" max="100" /> | 12% |

@@ -180,3 +180,47 @@ Alert 2's scanner, meanwhile, dropped a safety check Yuri's Revenge has, and
 its team-builder family matches phase-for-phase down to the same pool size of
 ten and the same lottery order. Three engines, one function, three
 personalities — and the test suite now knows all three.
+
+---
+
+**Late-night addendum — the "when" of the AI brain, and two lies in the
+community headers.** The recent sessions reversed *what* the skirmish AI
+builds; tonight closed *when*. Every AI team in the game is born from a
+trigger list, and each trigger runs a predicate — a cascade of gates and a
+nine-way condition check — before it's even allowed a lottery ticket. That
+predicate is now fully reversed, adversarially reviewed, and ported with a
+spec test on every gate. It rolls no dice at all, which is good news for
+lockstep. The gates have opinions: while a house hasn't met its
+per-difficulty quota of base-defense teams, *only* base-defense triggers may
+fire; once the team builder signals there's enough defense, they're excluded
+instead. The skirmish difficulty toggles are indexed by an enum that counts
+*backwards* (hardest = 0), and a difficulty value out of range passes the
+gate entirely.
+
+The sharpest finds were two errors in the community's own reference headers,
+trusted for years: a comparator struct whose two field names are swapped
+relative to the real binary layout (the threshold and the operator code live
+in each other's slots), and a condition enum whose first two labels are
+crossed (condition 0 inspects the *enemy's* arsenal, condition 1 your own —
+the opposite of what the names say). Port from the headers alone and you'd
+compare the wrong number with the wrong operator against the wrong player.
+The binary remains the only witness that never misremembers. Two more
+curios: the "superweapon charged" conditions never actually check *charged*
+— they check *granted*, within a tunable slack of readiness — and they
+inspect the asking player's superweapons rather than the enemy's, thanks to
+a one-instruction stack quirk. Cross-game, Red Alert 2's copy is
+instruction-identical, while Tiberian Sun's is the visible ancestor: fewer
+condition kinds, a smaller class, and no base-reachability gate at all —
+that geography check (can my base even *reach* yours, amphibiously if need
+be) arrived with Red Alert 2.
+
+And the trigonometry chapter closed: the engine's last two mystery math
+leaves are table-driven sine and cosine over a shared ten-thousand-entry
+table, byte-identical across all three games. We proved the table's exact
+generating formula — then embedded the extracted bytes anyway, because the
+formula depends on a math library that's allowed to differ between machines,
+and determinism outranks elegance. The table even carries a faithful
+imperfection we now reproduce on purpose: negative angles round *away* from
+the nearest entry, so sine of −90° lands two slots off from where a clean
+implementation would put it. The game has been slightly wrong, identically,
+on every machine, for twenty-five years — and now so are we.
