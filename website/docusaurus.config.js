@@ -13,10 +13,11 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Production URL + base path.
-  // GitHub Pages *project* site serves under /<repo>/. On a custom domain,
-  // Firebase Hosting, or a self-host root, set baseUrl to '/'.
-  url: 'https://dassheep.github.io',
-  baseUrl: '/reTS/',
+  // Custom domain (GitHub Pages, see static/CNAME): serves from the domain
+  // root, so baseUrl is '/'. The old project-site form was
+  // url 'https://dassheep.github.io' + baseUrl '/reTS/'.
+  url: 'https://rets.dassheep.tech',
+  baseUrl: '/',
 
   organizationName: 'DasSheep',
   projectName: 'reTS',
@@ -150,9 +151,9 @@ const config = {
       {
         offlineModeActivationStrategies: ['appInstalled', 'standalone', 'queryString'],
         pwaHead: [
-          { tagName: 'link', rel: 'manifest', href: '/reTS/manifest.json' },
+          { tagName: 'link', rel: 'manifest', href: '/manifest.json' },
           { tagName: 'meta', name: 'theme-color', content: '#2e8555' },
-          { tagName: 'link', rel: 'apple-touch-icon', href: '/reTS/img/pwa-icon-192.png' },
+          { tagName: 'link', rel: 'apple-touch-icon', href: '/img/pwa-icon-192.png' },
           { tagName: 'meta', name: 'apple-mobile-web-app-capable', content: 'yes' },
           {
             tagName: 'meta',
