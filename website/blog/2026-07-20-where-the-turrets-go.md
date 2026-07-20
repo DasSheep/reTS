@@ -272,3 +272,34 @@ question answers itself from what units the team wants to field. And the
 placement finder's cross-game story is tidy: Yuri's Revenge has the
 15-argument version, Red Alert 2 lacks one option, Tiberian Sun lacks two —
 three nested generations of the same machine, identical at the core.
+
+---
+
+**Late addendum.** Two threads closed after dark. First, a disassembler
+mystery that had blocked walking Tiberian Sun's per-house AI tick for a
+week: the "unresolved jump table" that fuses three functions into one
+unreadable blob turned out not to live in the tick body at all. It's a
+small island of *data* — one jump table cleverly shared by **two different
+switch statements** (the second one indexes seven entries deep into the
+first one's table, through a byte-compression map), sitting between
+functions. A linear disassembler eats those bytes as instructions and
+never recovers. Resolved from raw bytes, the layout is clean: the
+buildability checker, a tiny owned-building lookup helper nobody had
+documented, and the real tick body, each NOP-padded apart. Bonus find: the
+switch's bounds check is an unsigned compare, so a sufficiently malformed
+prerequisite value would wrap around it and index memory far out of
+bounds — a dormant hazard the original compiler left in, cousin to one we'd
+already documented on the Yuri's Revenge side.
+
+Second: the per-cell passability predicate — the function every placement
+and movement query ultimately asks "can this unit stand here?" — is now
+fully reversed, fresh-eyes and adversarially verified, and its three
+long-mysterious argument slots have names. The best of them explains
+bridges. The engine keeps *two* occupancy ledgers per cell: one for the
+ground, one for the bridge deck above it. With the default arguments every
+retail caller passes, a bridge cell automatically switches to the deck
+ledger — and *waives* the impassability of the terrain underneath. That
+one four-instruction waiver is the entire reason infantry can walk across
+water on a bridge. It's ported, spec-tested against hand-computed values
+from the raw instructions, and queryable through the engine's
+introspection interface like everything else.
