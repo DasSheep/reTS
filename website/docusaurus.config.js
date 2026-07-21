@@ -10,7 +10,25 @@ const darkCodeTheme = themes.dracula;
 const config = {
   title: 'reTS',
   tagline: 'An in-development, faithful reimplementation of the Command & Conquer TS/RA2 engine',
-  favicon: 'img/favicon.ico',
+  // Compact reTS wordmark, transparent background. SVG is the primary icon
+  // (crisp + scalable); the PNG/ICO fallbacks in headTags/static cover the few
+  // browsers without SVG-favicon support. All three are the same transparent
+  // compact artwork (regenerated from rets-wordmark-compact.svg).
+  favicon: 'img/brand/rets-wordmark-compact.svg',
+
+  // PNG fallback for browsers that don't render SVG favicons; the primary SVG
+  // link is emitted from the `favicon` field above, and legacy root
+  // /favicon.ico auto-fetch resolves to static/img/favicon.ico.
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/img/favicon.png',
+      },
+    },
+  ],
 
   // Production URL + base path.
   // Custom domain (GitHub Pages, see static/CNAME): serves from the domain
