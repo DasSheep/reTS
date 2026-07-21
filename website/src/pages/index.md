@@ -61,9 +61,19 @@ extensions can build on it.
 <!-- re-coverage:start -->
 <!-- Generated from the project's function-coverage metric - do not hand-edit this block. -->
 
-**Empirical function coverage.** Of the **9,539 functions** in the original engine binary, **1,258** have been located and identified in the reverse-engineering record, **301** are analyzed in depth, and **579** are reflected in verified reimplementation code.
+**Empirical function coverage.** The original engine binary contains **9,539 functions**; filtering out compiler runtime and trivial accessor glue — absorbed by data-structure modeling rather than reversed function-by-function — leaves **3,345 substantive functions** that the work actually has to conquer. Counted directly from the analysis record, as a complement to the judgment-based estimate above (a function is one tally whether it is three instructions or seven hundred).
 
-Filtering out compiler runtime and trivial accessor glue — which get absorbed by data-structure modeling rather than reversed function-by-function — leaves **3,345 substantive functions** that the work actually has to conquer. Of those, **610 (18%) are located** and **280 (8%) are reflected in verified reimplementation code**. Counted directly from the analysis record — a complement to the judgment-based estimate above (a function is one tally whether it is three instructions or seven hundred).
+| Of all 9,539 functions | | |
+|---|---|----:|
+| Located in the RE record | <progress className="tracker" value="13" max="100" /> | 1,258 (13.2%) |
+| Analyzed in depth | <progress className="tracker" value="3" max="100" /> | 301 (3.2%) |
+| In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 579 (6.1%) |
+
+| Of the 3,345 substantive functions | | |
+|---|---|----:|
+| Located in the RE record | <progress className="tracker" value="18" max="100" /> | 610 (18.2%) |
+| Analyzed in depth | <progress className="tracker" value="6" max="100" /> | 187 (5.6%) |
+| In verified reimplementation code | <progress className="tracker" value="8" max="100" /> | 280 (8.4%) |
 <!-- re-coverage:end -->
 
 ## Explore
