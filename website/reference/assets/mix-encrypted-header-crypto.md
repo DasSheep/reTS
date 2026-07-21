@@ -1,4 +1,5 @@
 ---
+draft: true
 sidebar_position: 2
 title: MIX archive encryption (Blowfish + RSA "fast key")
 description: >-

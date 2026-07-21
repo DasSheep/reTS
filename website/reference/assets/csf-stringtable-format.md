@@ -1,4 +1,5 @@
 ---
+draft: true
 sidebar_position: 2
 title: CSF stringtable format
 description: >-
