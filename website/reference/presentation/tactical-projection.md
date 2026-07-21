@@ -3,12 +3,12 @@ sidebar_position: 2
 title: Tactical world-to-client projection
 description: >-
   World-to-client isometric projection, height adjustment, and the inverse mapping. Verified: TS/Firestorm, Red Alert 2, Yuri's Revenge.
-last_verified: 2026-07-16
+last_verified: 2026-07-21
 ---
 
 # Tactical world-to-client projection
 
-*Last verified: 2026-07-16. Version coverage: **Tiberian Sun / Firestorm**, **Red Alert 2**, and **Yuri's Revenge**. Red Alert 2 and Yuri's Revenge share identical projection arithmetic and initialized view state, modulo code relocation. Tiberian Sun and Firestorm share one binary and diverge from the Red Alert 2 / Yuri's Revenge family in tile geometry, the height-adjustment threshold, visibility margins, and the inverse-matrix constants (see "Version differences" below). Generic Red Alert 2 / Yuri's Revenge savegame bulk-object restoration of this state is not published here — see "What this entry does not claim."*
+*Last verified: 2026-07-21. Version coverage: **Tiberian Sun / Firestorm**, **Red Alert 2**, and **Yuri's Revenge**. Red Alert 2 and Yuri's Revenge share identical projection arithmetic and initialized view state, modulo code relocation. Tiberian Sun and Firestorm share one binary and diverge from the Red Alert 2 / Yuri's Revenge family in tile geometry, the height-adjustment threshold, visibility margins, and the inverse-matrix constants (see "Version differences" below). Generic Red Alert 2 / Yuri's Revenge savegame bulk-object restoration of this state is not published here — see "What this entry does not claim."*
 
 This entry covers the coordinate math that sits between the simulation's world coordinates and the tactical view's client-relative pixel points: projecting a world coordinate to a client point, adjusting that point for height, deciding whether the result counts as visible, and mapping a client point back to a world coordinate. It also pins the initialized scale and matrix state that arithmetic depends on, and who owns that state across a save/load cycle. It does not cover draw order, dirty-rectangle tracking, shroud/fog interaction, or scrolling and input handling.
 
@@ -88,8 +88,8 @@ if client_y >= visible_bottom_offset + visible_height: reject
 
 screen = client + camera_offset
 world  = inverse_view_matrix * (screen.x, screen.y, 0, 1)
-coord.x = round_to_int(world.x)
-coord.y = round_to_int(world.y)
+coord.x = trunc_toward_zero(world.x)
+coord.y = trunc_toward_zero(world.y)
 coord.z = 0
 ```
 

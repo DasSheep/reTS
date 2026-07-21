@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 slug: /intro
-last_verified: 2026-07-16
+last_verified: 2026-07-21
 ---
 
 # Introduction
@@ -11,7 +11,7 @@ standalone, moddable reimplementation of the Westwood isometric RTS engine behin
 the **Command & Conquer** titles **Tiberian Sun**, **Red Alert 2**, and
 **Yuri's Revenge**.
 
-*Last verified against the project charter and release state: 2026-07-16.*
+*Last verified against the project charter and release state: 2026-07-21.*
 
 :::caution Current availability
 The documentation site is public. The engine source, binaries, playable client,
@@ -25,7 +25,7 @@ and native modding tools are not publicly released yet.
   before anything is considered done.
 - The verified slice of that work is published as it completes in the
   [Original Engine Reference](/reference), which now spans combat, data/rules
-  interpretation, and presentation and UI systems.
+  interpretation, presentation and UI, and multiplayer synchronization systems.
 - The [Devblog](/devblog) narrates the reverse-engineering and build work as it
   happens, system by system.
 - None of this adds up to a playable game yet — there is no public client,

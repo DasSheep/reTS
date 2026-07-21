@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-last_verified: 2026-07-16
+last_verified: 2026-07-21
 ---
 
 # For players
@@ -8,7 +8,7 @@ last_verified: 2026-07-16
 This section will contain release, configuration, and play guides when a public
 client exists.
 
-*Last verified against the current release state: 2026-07-16.*
+*Last verified against the current release state: 2026-07-21.*
 
 :::caution No playable release yet
 There is currently no public reTS engine build to install or play. Publishing
@@ -20,8 +20,9 @@ page records availability instead of speculative guidance.
 
 - The **[Devblog](/devblog)** follows verified engine milestones and design work.
 - The **[Engine Reference](/reference)** explains completed, verified slices of
-  original-engine behavior — spanning combat, rules interpretation, and
-  presentation and UI systems so far — as new entries are approved.
+  original-engine behavior — spanning combat, rules interpretation, multiplayer
+  synchronization, and presentation and UI systems so far — as new entries are
+  approved.
 - What exists behind the scenes is a headless, deterministic simulation core;
   none of it is packaged into anything installable yet.
 - This page will change from a status page to a guide only after a public build
