@@ -32,10 +32,10 @@ game assets**. Players will supply their own legally owned game data.
 
 ## Documentation
 
-Documentation and the devblog live at **https://dassheep.github.io/reTS/**:
+Documentation and the devblog live at **https://rets.dassheep.tech**:
 
-- 🎮 **[For players](https://dassheep.github.io/reTS/docs/users/overview)** — current release availability.
-- 🛠️ **[For modders](https://dassheep.github.io/reTS/docs/modders/overview)** — the planned authoring direction.
-- 🧩 **[For contributors](https://dassheep.github.io/reTS/docs/contributing/overview)** — architecture and source-release status.
-- ✍️ **[Devblog](https://dassheep.github.io/reTS/devblog)** — the reverse-engineering → modernization journey.
-- 🏺 **[Engine Reference](https://dassheep.github.io/reTS/reference)** — verified-only documentation of original engine behavior.
+- 🎮 **[For players](https://rets.dassheep.tech/docs/users/overview)** — current release availability.
+- 🛠️ **[For modders](https://rets.dassheep.tech/docs/modders/overview)** — the planned authoring direction.
+- 🧩 **[For contributors](https://rets.dassheep.tech/docs/contributing/overview)** — architecture and source-release status.
+- ✍️ **[Devblog](https://rets.dassheep.tech/devblog)** — the reverse-engineering → modernization journey.
+- 🏺 **[Engine Reference](https://rets.dassheep.tech/reference)** — verified-only documentation of original engine behavior.
