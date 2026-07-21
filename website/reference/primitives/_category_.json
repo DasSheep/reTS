@@ -1,0 +1,8 @@
+{
+  "label": "Primitives",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Verified spatial primitives of the original engine — the cell/lepton coordinate system, facing values, and the distance measure the rest of the engine is built on."
+  }
+}

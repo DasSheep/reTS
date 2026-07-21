@@ -1,0 +1,8 @@
+{
+  "label": "World & map",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Verified world and map mechanics of the original engine — the cell grid and indexing, floor height, map bounds, LandType, and the movement-cost table."
+  }
+}

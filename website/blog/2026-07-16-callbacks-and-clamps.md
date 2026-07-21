@@ -7,8 +7,14 @@ tags: [devblog, economy, missions, audio, mcp, reference, documentation, trigger
 last_verified: 2026-07-16
 ---
 
-Two stories today, both about the same discipline: trust the binary over the
-story you'd expect it to tell.
+Reverse engineering has a failure mode that looks nothing like a bug: code
+that reads exactly right and is quietly wrong. A plausible paraphrase of an
+instruction and the instruction itself can look identical at a glance, so the
+safest-looking line is often the one that never actually matched the binary.
+That pattern surfaced three times over today — in a harvester's movement
+logic, in a single audio clamp, and in the switch at the heart of the campaign
+scripting engine — and each time the fix was the same discipline: trust the
+binary over the story you'd expect it to tell.
 
 {/* truncate */}
 
@@ -72,47 +78,33 @@ playback paths were re-derived independently from the instruction stream to
 confirm it wasn't a one-off artifact — the same unsigned comparison shows up
 in both, byte for byte. Both source studies were corrected, and the port now
 carries oracle tests that pin the negative-input case and the exact clamp
-boundary, not just the values that used to look reasonable.
+boundary, not just the values that used to look reasonable. Nobody involved —
+not the port, not the reviewer flagging the smell — expected "clamps to max"
+as the answer, and that's the whole case: a signed clamp and an unsigned clamp
+read almost identically until you read the instruction that separates them.
 
-Nobody involved — not the port, not the reviewer flagging the smell —
-expected "clamps to max" as the answer. That's the whole case for reversing
-from what the binary actually does instead of trusting a transcription that
-merely sounds right. A signed clamp and an unsigned clamp read almost
-identically at a glance; only the instruction stream tells you which one you
-actually have.
-
-## The rest of the sweep, briefly
-
-The remainder of the pass hardened seams rather than changing behavior: the
+The rest of the sweep hardened seams rather than changing behavior. The
 capability gateway closed out its two remaining unshipped surface items —
 bounded summary responses so large results don't blow past sane limits, and
 conservative per-capability metadata (game coverage, status, with filtering)
-so callers can ask what a capability actually covers before running it. A
-trigger-event regression test that had quietly become tautological now
-parses its expected values out of the source study at test time instead of
-duplicating them, so drift actually fails the build again. Asset-format
-detection stopped promoting ambiguous, magic-less files without filename
-corroboration.
-
-And four new completed systems went live on the [Engine
-Reference](/reference) today, joining the growing binary-verified catalog
-alongside the site's Engine Reference introduction: how draw layers are
-filed and sorted before a frame renders, how the tactical view projects
-world space to screen space, how the sidebar routes its commands, and how
-warhead rules are resolved. Each one only publishes once a system is fully
-reversed, ported, and oracle-verified — the same bar that caught today's
-volume clamp before it could quietly ship.
+so callers can ask what a capability actually covers before running it.
+Asset-format detection stopped promoting ambiguous, magic-less files without
+filename corroboration. And a trigger-event regression test that had quietly
+become tautological now parses its expected values out of the source study at
+test time instead of duplicating them, so drift actually fails the build again
+— a small fix that happens to sit right at the doorstep of the day's largest
+piece of work.
 
 ## Sixty-two ways for an event to happen
 
-The day's third arc opened the campaign scripting engine. Map triggers are
-the machinery every mission is written in: a tag listens for raised events,
-sweeps its attached triggers, each trigger keeps a bitmask of which of its
-conditions have been met, and a sprung trigger fires its chain of actions.
-That spine — the sweep, the latch, the three-way persistence mode that
-decides whether a fired trigger dies, waits for its siblings, or lives
-forever — is now reversed, ported, and oracle-pinned across Tiberian Sun,
-Red Alert 2, and Yuri's Revenge.
+That doorstep is the campaign scripting engine. Map triggers are the machinery
+every mission is written in: a tag listens for raised events, sweeps its
+attached triggers, each trigger keeps a bitmask of which of its conditions
+have been met, and a sprung trigger fires its chain of actions. That spine —
+the sweep, the latch, the three-way persistence mode that decides whether a
+fired trigger dies, waits for its siblings, or lives forever — is now
+reversed, ported, and oracle-pinned across Tiberian Sun, Red Alert 2, and
+Yuri's Revenge.
 
 Then the two big boundaries fell. The first is the event evaluator itself:
 the sixty-two-kind switch that answers "did this specific event actually
@@ -123,9 +115,22 @@ else flows through a pipeline of vetoes: a gate that matches the raised
 event's kind, an object stage, a stage keyed on the house the event is
 about, a stage keyed on the house the event *names*, and then — if nothing
 objected — an ambient **true**. Events don't prove they happened; they
-survive. That inversion explains a piece of mapper folklore: a trigger
-whose named house doesn't exist in the scenario simply fires, because the
-failed lookup skips the last veto stage entirely.
+survive.
+
+```mermaid
+flowchart TD
+    E[Event raised] --> Q{Self-contained kind?}
+    Q -->|yes| D[Answer directly<br/>timers, variables,<br/>thresholds, map scans]
+    Q -->|no| G[Raised-kind gate]
+    G --> O[Object stage]
+    O --> H1[House the event is about]
+    H1 --> H2[House the event names]
+    H2 --> T[No veto objected → true]
+```
+
+That inversion explains a piece of mapper folklore: a trigger whose named
+house doesn't exist in the scenario simply fires, because the failed lookup
+skips the last veto stage entirely.
 
 The decompiler lied twice in that one function, and both lies only came out
 under the instruction stream. Four build-event kinds bypass the raised-kind
@@ -153,5 +158,18 @@ be the very struct member whose insertion caused the offset shift we'd been
 noting all along. Yesterday's "these two functions are identical across
 games" verdict is corrected accordingly, and the action dispatcher's
 skeleton is pinned as well — including the detail that a failed action never
-aborts the rest of its chain. The per-action handler bodies, all
-hundred-and-forty-five of them, are the next atoms.
+aborts the rest of its chain.
+
+Three unrelated corners of the engine, then, and the same lesson under each:
+the harvester's stateful failure, the clamp that goes loud instead of silent,
+and the evaluator that fires on a house that isn't there — none of them the
+answer the plausible reading would have written. That discipline is exactly
+what gates publication, so as those systems close out they join the
+[Engine Reference](/reference), where four more completed entries went live
+today: how draw layers are filed and sorted before a frame renders, how the
+tactical view projects world space to screen space, how the sidebar routes
+its commands, and how warhead rules are resolved. Each one only publishes
+once its system is fully reversed, ported, and oracle-verified — the same bar
+that caught today's volume clamp before it could quietly ship. The
+per-action handler bodies, all hundred-and-forty-five of them, are the next
+atoms.
