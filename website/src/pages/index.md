@@ -24,9 +24,9 @@ extensions can build on it.
 <!-- progress:start -->
 <!-- Generated from the project's progress tracker - do not hand-edit this block. -->
 
-**≈19%** of the way to a fully-playable, faithful Red Alert 2 / Yuri's Revenge engine, end to end *(excludes mod-compatibility scope)*.
+**≈20%** of the way to a fully-playable, faithful Red Alert 2 / Yuri's Revenge engine, end to end *(excludes mod-compatibility scope)*.
 
-<progress className="tracker tracker-overall" value="19" max="100" />
+<progress className="tracker tracker-overall" value="20" max="100" />
 
 | Area | | Done |
 |------|---|----:|
@@ -34,7 +34,7 @@ extensions can build on it.
 | Primitives (math / RNG / coords / time) | <progress className="tracker" value="94" max="100" /> | 94% |
 | Data & rules interpretation (INI / inheritance) | <progress className="tracker" value="34" max="100" /> | 34% |
 | Asset formats (MIX / SHP / VXL / TMP / PAL / CSF / maps) | <progress className="tracker" value="23" max="100" /> | 23% |
-| Object model & world grid | <progress className="tracker" value="27" max="100" /> | 27% |
+| Object model & world grid | <progress className="tracker" value="28" max="100" /> | 28% |
 | Movement & locomotion | <progress className="tracker" value="30" max="100" /> | 30% |
 | Combat (weapons / projectiles / targeting / veterancy) | <progress className="tracker" value="40" max="100" /> | 40% |
 | Unit & building sim (production / power / deploy / SW) | <progress className="tracker" value="18" max="100" /> | 18% |
