@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
-  <title id="title">RE-TS Yuri's Revenge game lockup</title>
-  <desc id="desc">The canonical neutral RE-TS wordmark over the solid layered Yuri insignia without a separate backing emblem.</desc>
+  <title id="title">reTS Yuri's Revenge game lockup</title>
+  <desc id="desc">The canonical neutral reTS wordmark over the solid layered Yuri insignia without a separate backing emblem.</desc>
   <defs>
     <linearGradient id="goldFace" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0a2" /><stop offset="0.25" stop-color="#f6cf58" /><stop offset="0.5" stop-color="#ffe992" /><stop offset="0.75" stop-color="#bd8418" /><stop offset="1" stop-color="#f5d35d" /></linearGradient>
     <linearGradient id="goldDepth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bf8214" /><stop offset="0.5" stop-color="#704000" /><stop offset="1" stop-color="#321d00" /></linearGradient>
