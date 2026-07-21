@@ -61,7 +61,9 @@ extensions can build on it.
 <!-- re-coverage:start -->
 <!-- Generated from the project's function-coverage metric - do not hand-edit this block. -->
 
-**Empirical function coverage.** Of the **9,539 functions** in the original engine binary, **1,258** have been located and identified in the reverse-engineering record, **301** are analyzed in depth, and **579** are reflected in verified reimplementation code. Counted directly from the analysis record — a complement to the judgment-based estimate above (a function is one tally whether it is three instructions or seven hundred).
+**Empirical function coverage.** Of the **9,539 functions** in the original engine binary, **1,258** have been located and identified in the reverse-engineering record, **301** are analyzed in depth, and **579** are reflected in verified reimplementation code.
+
+Filtering out compiler runtime and trivial accessor glue — which get absorbed by data-structure modeling rather than reversed function-by-function — leaves **3,345 substantive functions** that the work actually has to conquer. Of those, **610 (18%) are located** and **280 (8%) are reflected in verified reimplementation code**. Counted directly from the analysis record — a complement to the judgment-based estimate above (a function is one tally whether it is three instructions or seven hundred).
 <!-- re-coverage:end -->
 
 ## Explore
