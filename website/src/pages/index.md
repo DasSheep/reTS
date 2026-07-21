@@ -34,7 +34,7 @@ extensions can build on it.
 | Primitives (math / RNG / coords / time) | <progress className="tracker" value="94" max="100" /> | 94% |
 | Data & rules interpretation (INI / inheritance) | <progress className="tracker" value="34" max="100" /> | 34% |
 | Asset formats (MIX / SHP / VXL / TMP / PAL / CSF / maps) | <progress className="tracker" value="23" max="100" /> | 23% |
-| Object model & world grid | <progress className="tracker" value="30" max="100" /> | 30% |
+| Object model & world grid | <progress className="tracker" value="31" max="100" /> | 31% |
 | Movement & locomotion | <progress className="tracker" value="30" max="100" /> | 30% |
 | Combat (weapons / projectiles / targeting / veterancy) | <progress className="tracker" value="40" max="100" /> | 40% |
 | Unit & building sim (production / power / deploy / SW) | <progress className="tracker" value="18" max="100" /> | 18% |
@@ -55,7 +55,7 @@ extensions can build on it.
 | Parameterization (de-hardcoded reversed limits) | <progress className="tracker" value="0" max="100" /> | 0% |
 | Modernization (code / assets / presentation / modding) | <progress className="tracker" value="1" max="100" /> | 1% |
 
-<sub>A deliberately **conservative**, best-judgment estimate — only behavior that is fully recovered from the original engine, reimplemented, and verified against it counts; scaffolding, partial traces, and work-in-progress do not. It is an at-a-glance gauge, not an objective measure and not a schedule. Last updated: 2026-07-21.</sub>
+<sub>A deliberately **conservative**, best-judgment estimate — only behavior that is fully recovered from the original engine, reimplemented, and verified against it counts; scaffolding, partial traces, and work-in-progress do not. It is an at-a-glance gauge, not an objective measure and not a schedule. Last updated: 2026-07-22.</sub>
 <!-- progress:end -->
 
 <!-- re-coverage:start -->
@@ -65,15 +65,15 @@ extensions can build on it.
 
 | Of all 9,539 functions | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="13" max="100" /> | 1,258 (13.2%) |
-| Analyzed in depth | <progress className="tracker" value="3" max="100" /> | 301 (3.2%) |
-| In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 579 (6.1%) |
+| Located in the RE record | <progress className="tracker" value="13" max="100" /> | 1,261 (13.2%) |
+| Analyzed in depth | <progress className="tracker" value="3" max="100" /> | 304 (3.2%) |
+| In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 584 (6.1%) |
 
 | Of the 3,345 substantive functions | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="18" max="100" /> | 610 (18.2%) |
-| Analyzed in depth | <progress className="tracker" value="6" max="100" /> | 187 (5.6%) |
-| In verified reimplementation code | <progress className="tracker" value="8" max="100" /> | 280 (8.4%) |
+| Located in the RE record | <progress className="tracker" value="18" max="100" /> | 612 (18.3%) |
+| Analyzed in depth | <progress className="tracker" value="6" max="100" /> | 189 (5.7%) |
+| In verified reimplementation code | <progress className="tracker" value="8" max="100" /> | 282 (8.4%) |
 <!-- re-coverage:end -->
 
 ## Explore
