@@ -58,6 +58,12 @@ extensions can build on it.
 <sub>A deliberately **conservative**, best-judgment estimate — only behavior that is fully recovered from the original engine, reimplemented, and verified against it counts; scaffolding, partial traces, and work-in-progress do not. It is an at-a-glance gauge, not an objective measure and not a schedule. Last updated: 2026-07-21.</sub>
 <!-- progress:end -->
 
+<!-- re-coverage:start -->
+<!-- Generated from the project's function-coverage metric - do not hand-edit this block. -->
+
+**Empirical function coverage.** Of the **9,539 functions** in the original engine binary, **1,258** have been located and identified in the reverse-engineering record, **301** are analyzed in depth, and **579** are reflected in verified reimplementation code. Counted directly from the analysis record — a complement to the judgment-based estimate above (a function is one tally whether it is three instructions or seven hundred).
+<!-- re-coverage:end -->
+
 ## Explore
 
 - 📖 **[Introduction](/docs/intro)** — what reTS is and how it's built.
