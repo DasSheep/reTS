@@ -34,7 +34,7 @@ extensions can build on it.
 | Primitives (math / RNG / coords / time) | <progress className="tracker" value="94" max="100" /> | 94% |
 | Data & rules interpretation (INI / inheritance) | <progress className="tracker" value="34" max="100" /> | 34% |
 | Asset formats (MIX / SHP / VXL / TMP / PAL / CSF / maps) | <progress className="tracker" value="23" max="100" /> | 23% |
-| Object model & world grid | <progress className="tracker" value="31" max="100" /> | 31% |
+| Object model & world grid | <progress className="tracker" value="32" max="100" /> | 32% |
 | Movement & locomotion | <progress className="tracker" value="30" max="100" /> | 30% |
 | Combat (weapons / projectiles / targeting / veterancy) | <progress className="tracker" value="40" max="100" /> | 40% |
 | Unit & building sim (production / power / deploy / SW) | <progress className="tracker" value="18" max="100" /> | 18% |
@@ -66,13 +66,13 @@ extensions can build on it.
 | Of all 9,539 functions | | |
 |---|---|----:|
 | Located in the RE record | <progress className="tracker" value="14" max="100" /> | 1,303 (13.7%) |
-| Analyzed in depth | <progress className="tracker" value="3" max="100" /> | 306 (3.2%) |
+| Analyzed in depth | <progress className="tracker" value="3" max="100" /> | 307 (3.2%) |
 | In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 598 (6.3%) |
 
 | Of the 3,345 substantive functions | | |
 |---|---|----:|
 | Located in the RE record | <progress className="tracker" value="19" max="100" /> | 643 (19.2%) |
-| Analyzed in depth | <progress className="tracker" value="6" max="100" /> | 191 (5.7%) |
+| Analyzed in depth | <progress className="tracker" value="6" max="100" /> | 192 (5.7%) |
 | In verified reimplementation code | <progress className="tracker" value="9" max="100" /> | 291 (8.7%) |
 <!-- re-coverage:end -->
 
