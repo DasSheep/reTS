@@ -3,12 +3,12 @@ sidebar_position: 1
 title: Map and cell grid
 description: >-
   The engine's spatial floor - the cell array and its indexing, the per-cell height model, map bounds, LandType derivation, and the [Land] movement-cost table. Verified: Tiberian Sun, Red Alert 2, Yuri's Revenge.
-last_verified: 2026-07-21
+last_verified: 2026-07-23
 ---
 
 # Map and cell grid
 
-*Last verified: 2026-07-21. Version coverage: this entry reconciles **Tiberian Sun**, **Red Alert 2**, and **Yuri's Revenge**. The cell array and indexing, the shared "invalid cell" fallback, the diamond map-bounds test, the LandType enumeration, and the 16-entry terrain-tag mapping are **identical across all three**. The per-cell height model and the `[Land]` movement-cost table **diverge** between games; those divergences are described factually per game below. One height-model detail (Red Alert 2's level-height representation) is **not yet verified** and is called out rather than guessed.*
+*Last verified: 2026-07-23. Version coverage: this entry reconciles **Tiberian Sun**, **Red Alert 2**, and **Yuri's Revenge**. The cell array and indexing, the shared "invalid cell" fallback, the diamond map-bounds test, the LandType enumeration, and the 16-entry terrain-tag mapping are **identical across all three**. The per-cell height model and the `[Land]` movement-cost table **diverge** between games; those divergences are described factually per game below. One height-model detail (Red Alert 2's level-height representation) is **not yet verified** and is called out rather than guessed.*
 
 The cell grid is the spatial floor of the engine: a flat array of cells that every unit, building, and terrain feature is placed on. This entry describes how a coordinate becomes a cell, how a cell reports its floor height, how the engine tests whether a cell is on the map, how each cell derives its **LandType**, and how the `[Land]` rules table turns a cell's LandType plus a unit's movement class into a movement cost and a pass/fail.
 
@@ -74,7 +74,7 @@ A cell's LandType is recomputed from its tile and any overlay, in a fixed order:
 
 1. **Overlay is considered first.** If the cell has an overlay, its LandType is taken from the overlay type. If that overlay land is `Wall` or `Railroad` (or the overlay carries a specific "authoritative" flag), the overlay wins outright and tile classification is skipped.
 2. **A blank tile** resolves to `Clear` (unless a non-authoritative overlay is keeping its own land).
-3. **A real tile** is classified from a terrain-tag byte stored on the tile's per-height sub-record, mapped through a fixed **16-entry table baked into the engine**. That table is byte-for-byte identical in all three games:
+3. **A real tile** is classified from a terrain-tag byte stored in the selected sub-tile's TMP image record, mapped through a fixed **16-entry table baked into the engine**. That table is byte-for-byte identical in all three games:
 
    | Tag | 0 | 1-4 | 5 | 6 | 7-8 | 9 | 10 | 11-12 | 13 | 14 | 15 |
    |-----|---|-----|---|---|-----|---|----|-------|----|----|----|
@@ -84,7 +84,7 @@ A cell's LandType is recomputed from its tile and any overlay, in a fixed order:
 
 ### Cross-version notes on LandType
 
-The recompute spine and the 16-entry table are shared, with two engine-specific branches: **Tiberian Sun** has an extra terrain-object fallback that can force the Tiberium branch, and **Yuri's Revenge** has an extra handling step for resource overlays sitting on sloped tiles. These are additive branches on an otherwise common spine.
+The recompute spine and the 16-entry table are shared, with two engine-specific branches: **Tiberian Sun** has an extra terrain-object fallback that can force the Tiberium branch. **Yuri's Revenge** strips a resource overlay on a sloped tile in its authoritative-overlay branch; in the later Tiberium branch, a steep slope also evicts the overlay. These are additive branches on an otherwise common spine.
 
 ## Tile-class predicates and the missing-guard quirk
 
@@ -155,7 +155,6 @@ The load-bearing consequence: a **bridge cell reads the bridge-deck occupancy le
 
 - **Red Alert 2's floor-height representation.** The level-height constant that Yuri's Revenge uses was not located in Red Alert 2, so whether Red Alert 2 interpolates sub-cell height like Tiberian Sun or flattens it like Yuri's Revenge is unresolved and unpublished.
 - **The exact per-ramp height coefficients** beyond the shape of the model (flat vs. interpolating). The categories and the `104`-per-level base are stated; individual ramp-by-ramp coefficient values are not enumerated here.
-- **The internal layout of the tile sub-record** that stores the terrain-tag byte - the 16-entry mapping is published, the record layout that feeds it is not.
 - **Movement-zone construction** (how a cell's zone is computed) and the pathfinding that consumes these costs - separate systems.
 - **Any reTS-specific API.** This page describes the original engine's behavior, recovered for the verified path.
 
