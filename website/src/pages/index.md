@@ -39,7 +39,7 @@ extensions can build on it.
 | Combat (weapons / projectiles / targeting / veterancy) | <progress className="tracker" value="40" max="100" /> | 40% |
 | Unit & building sim (production / power / deploy / SW) | <progress className="tracker" value="18" max="100" /> | 18% |
 | Economy (harvest / refine / tech tree) | <progress className="tracker" value="12" max="100" /> | 12% |
-| House & skirmish AI (build order / teams / triggers) | <progress className="tracker" value="16" max="100" /> | 16% |
+| House & skirmish AI (build order / teams / triggers) | <progress className="tracker" value="17" max="100" /> | 17% |
 | Campaign / scenario (triggers / tags / objectives) | <progress className="tracker" value="13" max="100" /> | 13% |
 | Presentation / rendering (iso / SHP / VXL / shroud) | <progress className="tracker" value="4" max="100" /> | 4% |
 | Audio (SFX / EVA / music) | <progress className="tracker" value="12" max="100" /> | 12% |
@@ -65,14 +65,14 @@ extensions can build on it.
 
 | Of all 9,539 functions | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="14" max="100" /> | 1,325 (13.9%) |
-| Analyzed in depth | <progress className="tracker" value="3" max="100" /> | 313 (3.3%) |
+| Located in the RE record | <progress className="tracker" value="14" max="100" /> | 1,336 (14.0%) |
+| Analyzed in depth | <progress className="tracker" value="3" max="100" /> | 324 (3.4%) |
 | In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 615 (6.4%) |
 
 | Of the 3,345 substantive functions | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="20" max="100" /> | 659 (19.7%) |
-| Analyzed in depth | <progress className="tracker" value="6" max="100" /> | 197 (5.9%) |
+| Located in the RE record | <progress className="tracker" value="20" max="100" /> | 667 (19.9%) |
+| Analyzed in depth | <progress className="tracker" value="6" max="100" /> | 206 (6.2%) |
 | In verified reimplementation code | <progress className="tracker" value="9" max="100" /> | 301 (9.0%) |
 <!-- re-coverage:end -->
 
