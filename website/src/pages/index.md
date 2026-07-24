@@ -61,19 +61,25 @@ extensions can build on it.
 <!-- re-coverage:start -->
 <!-- Generated from the project's function-coverage metric - do not hand-edit this block. -->
 
-**Empirical function coverage.** The original engine binary contains **9,539 functions**; filtering out compiler runtime and trivial accessor glue — absorbed by data-structure modeling rather than reversed function-by-function — leaves **3,345 substantive functions** that the work actually has to conquer. Counted directly from the analysis record, as a complement to the judgment-based estimate above (a function is one tally whether it is three instructions or seven hundred).
+**Empirical function coverage.** Faithfulness means all three engines in the lineage are equal targets, so coverage is measured against every one. Together the 3 original binaries contain **23,808 functions**; filtering out compiler runtime and trivial accessor glue — absorbed by data-structure modeling rather than reversed function-by-function — leaves **9,015 substantive functions** the work actually has to conquer. Counted directly from the analysis record, as a complement to the judgment-based estimate above.
 
-| Of all 9,539 functions | | |
+| Of all 23,808 functions across the lineage | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="14" max="100" /> | 1,354 (14.2%) |
-| Analyzed in depth | <progress className="tracker" value="3" max="100" /> | 333 (3.5%) |
-| In verified reimplementation code | <progress className="tracker" value="7" max="100" /> | 634 (6.6%) |
+| Located in the RE record | <progress className="tracker" value="9" max="100" /> | 2,064 (8.7%) |
+| Analyzed in depth | <progress className="tracker" value="2" max="100" /> | 422 (1.8%) |
+| In verified reimplementation code | <progress className="tracker" value="4" max="100" /> | 845 (3.5%) |
 
-| Of the 3,345 substantive functions | | |
+| Of the 9,015 substantive functions | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="20" max="100" /> | 681 (20.4%) |
-| Analyzed in depth | <progress className="tracker" value="6" max="100" /> | 211 (6.3%) |
-| In verified reimplementation code | <progress className="tracker" value="9" max="100" /> | 317 (9.5%) |
+| Located in the RE record | <progress className="tracker" value="12" max="100" /> | 1,106 (12.3%) |
+| Analyzed in depth | <progress className="tracker" value="3" max="100" /> | 282 (3.1%) |
+| In verified reimplementation code | <progress className="tracker" value="5" max="100" /> | 446 (4.9%) |
+
+| Substantive surface located, per engine | | |
+|---|---|----:|
+| YR | <progress className="tracker" value="20" max="100" /> | 675 / 3,345 (20.2%) |
+| RA2 | <progress className="tracker" value="7" max="100" /> | 226 / 3,181 (7.1%) |
+| TS | <progress className="tracker" value="8" max="100" /> | 205 / 2,489 (8.2%) |
 <!-- re-coverage:end -->
 
 ## Explore
