@@ -43,7 +43,7 @@ extensions can build on it.
 | Campaign / scenario (triggers / tags / objectives) | <progress className="tracker" value="13" max="100" /> | 13% |
 | Presentation / rendering (iso / SHP / VXL / shroud) | <progress className="tracker" value="4" max="100" /> | 4% |
 | Audio (SFX / EVA / music) | <progress className="tracker" value="12" max="100" /> | 12% |
-| Shell / UI (menus / sidebar / build queue) | <progress className="tracker" value="5" max="100" /> | 5% |
+| Shell / UI (menus / sidebar / build queue) | <progress className="tracker" value="6" max="100" /> | 6% |
 | Multiplayer / netcode (lobby / lockstep / replay) | <progress className="tracker" value="2" max="100" /> | 2% |
 | Save-load & game loop | <progress className="tracker" value="18" max="100" /> | 18% |
 
@@ -65,15 +65,15 @@ extensions can build on it.
 
 | Of all 9,539 functions | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="14" max="100" /> | 1,336 (14.0%) |
-| Analyzed in depth | <progress className="tracker" value="3" max="100" /> | 324 (3.4%) |
-| In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 615 (6.4%) |
+| Located in the RE record | <progress className="tracker" value="14" max="100" /> | 1,340 (14.0%) |
+| Analyzed in depth | <progress className="tracker" value="3" max="100" /> | 325 (3.4%) |
+| In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 616 (6.5%) |
 
 | Of the 3,345 substantive functions | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="20" max="100" /> | 667 (19.9%) |
-| Analyzed in depth | <progress className="tracker" value="6" max="100" /> | 206 (6.2%) |
-| In verified reimplementation code | <progress className="tracker" value="9" max="100" /> | 301 (9.0%) |
+| Located in the RE record | <progress className="tracker" value="20" max="100" /> | 670 (20.0%) |
+| Analyzed in depth | <progress className="tracker" value="6" max="100" /> | 207 (6.2%) |
+| In verified reimplementation code | <progress className="tracker" value="9" max="100" /> | 302 (9.0%) |
 <!-- re-coverage:end -->
 
 ## Explore
