@@ -27,10 +27,14 @@ Every entry published here must be **binary-verified**. It describes only the
 version coverage established by the underlying study; pending versions and
 incomplete systems stay unpublished.
 
-Reverse-engineering work is anchored on **Yuri's Revenge** first; each entry then
-states, on its own terms, whether Tiberian Sun and Red Alert 2 were separately
-confirmed, confirmed divergent, or are not yet checked. Never assume a claim
-carries across games unless that entry's version-coverage line says so.
+Reverse-engineering treats **Tiberian Sun, Red Alert 2, and Yuri's Revenge as
+equal first-class targets** — because these are one engine evolved across the
+three releases, a system is reversed from whichever release carries it most
+completely (often the latest, but Tiberian-Sun-first where TS is the richer
+implementation that later releases pared down), then reconciled against the
+others. Each entry then states, on its own terms, whether all three were
+separately confirmed, confirmed divergent, or are not yet checked. Never assume a
+claim carries across games unless that entry's version-coverage line says so.
 
 :::important Publishing gate
 A system receives an entry only after it is fully reversed, implemented,
