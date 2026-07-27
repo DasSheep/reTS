@@ -1,0 +1,8 @@
+{
+  "label": "Assets & formats",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Verified on-disk asset formats of the original engine — how the engine parses and decodes its sprite, image, and container files."
+  }
+}

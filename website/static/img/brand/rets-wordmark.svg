@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">RETS lettering study</title>
+  <desc id="desc">Transparent vector wordmark combining source-accurate Command and Conquer RE lettering with a Tiberian Sun inspired TS.</desc>
+  <defs>
+    <linearGradient id="goldFace" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0a2"/>
+      <stop offset="0.25" stop-color="#f6cf58"/>
+      <stop offset="0.5" stop-color="#ffe992"/>
+      <stop offset="0.75" stop-color="#bd8418"/>
+      <stop offset="1" stop-color="#f5d35d"/>
+    </linearGradient>
+    <linearGradient id="goldDepth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bf8214"/>
+      <stop offset="0.5" stop-color="#704000"/>
+      <stop offset="1" stop-color="#321d00"/>
+    </linearGradient>
+    <linearGradient id="orangeFace" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#ffc12d"/>
+      <stop offset="0.18" stop-color="#f47a0a"/>
+      <stop offset="0.43" stop-color="#ff9b13"/>
+      <stop offset="0.69" stop-color="#e74e00"/>
+      <stop offset="1" stop-color="#ff8d0b"/>
+    </linearGradient>
+    <linearGradient id="orangeDepth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a14300"/>
+      <stop offset="0.5" stop-color="#5c2100"/>
+      <stop offset="1" stop-color="#241008"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="140%" height="150%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="4" dy="8" stdDeviation="4" flood-color="#000" flood-opacity="0.72"/>
+    </filter>
+    <filter id="grain" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022 0.18" numOctaves="3" seed="41" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0.35" result="coloredNoise"/>
+      <feComponentTransfer in="coloredNoise" result="fadedNoise">
+        <feFuncA type="table" tableValues="0 0.16"/>
+      </feComponentTransfer>
+      <feComposite in="fadedNoise" in2="SourceAlpha" operator="in" result="clippedNoise"/>
+      <feBlend in="SourceGraphic" in2="clippedNoise" mode="soft-light"/>
+    </filter>
+
+    <!-- Exact main-word R and E paths from the supplied C&C Remastered SVG. -->
+    <g id="rShape" transform="translate(154 190) scale(1.14) translate(-2477.90 -662.92)">
+      <path fill-rule="evenodd" d="M2654.57 736.70C2652.09 738.73 2648.68 740.26 2644.38 741.32C2640.07 742.38 2635.27 743.07 2629.97 743.40C2624.67 743.74 2619.21 743.91 2613.58 743.92H2604.13L2604.08 712.92H2614.52C2620.48 712.89 2626.11 713.05 2631.42 713.36C2636.71 713.67 2641.36 714.39 2645.34 715.51C2649.31 716.64 2652.46 718.21 2654.79 720.22C2657.10 722.24 2658.27 725.03 2658.28 728.58C2658.28 731.97 2657.05 734.68 2654.57 736.70ZM2737.32 766.72C2746.42 764.13 2753.97 760.96 2759.92 757.24C2765.88 753.51 2770.26 749.14 2773.06 744.13C2775.87 739.12 2777.27 733.14 2777.26 726.19C2777.24 714.72 2773.07 704.96 2764.79 696.90C2756.48 688.84 2745.21 682.28 2730.96 677.21C2716.70 672.15 2700.12 668.50 2681.24 666.27C2662.35 664.04 2656.50 662.92 2635.30 662.95L2477.90 663.22L2478.22 849.49L2604.31 849.28L2604.19 780.05L2661.14 849.18L2802.98 848.94L2716.86 771.54C2724.40 770.04 2731.30 768.44 2737.32 766.72Z"/>
+    </g>
+    <g id="eShape" transform="translate(545 190) scale(1.14) translate(-2146.62 -662.73)">
+      <path d="M2146.62 663.21L2431.30 662.73L2431.38 711.72L2283.88 711.97L2283.91 729.75L2431.41 729.49L2431.49 776.11L2283.99 776.36L2284.02 793.96L2431.23 793.71L2431.32 848.94L2146.94 849.43Z"/>
+    </g>
+
+    <!-- Tiberian Sun-inspired silhouettes traced from the supplied raster. -->
+    <path id="tShape" transform="translate(13 -35)" d="M185 488H492L465 553H369V766H268V553H154Z"/>
+    <path id="sShape" transform="translate(-12 -35)" d="M537 488H864L839 553H654V600H860V766H521L553 708H736V663H537Z"/>
+  </defs>
+
+  <!-- RE: restrained metallic depth over the exact source silhouettes. -->
+  <g fill-rule="evenodd" stroke-linejoin="round" filter="url(#shadow)">
+    <use href="#rShape" transform="translate(7 9)" fill="url(#goldDepth)" stroke="#160e02" stroke-width="8"/>
+    <use href="#eShape" transform="translate(7 9)" fill="url(#goldDepth)" stroke="#160e02" stroke-width="8"/>
+  </g>
+  <g fill="url(#goldFace)" fill-rule="evenodd" stroke="#7c4b08" stroke-width="5" stroke-linejoin="round" filter="url(#grain)">
+    <use href="#rShape"/>
+    <use href="#eShape"/>
+  </g>
+  <g fill="none" stroke="#fff0a1" stroke-width="2.5" stroke-linejoin="round" opacity="0.88">
+    <use href="#rShape"/>
+    <use href="#eShape"/>
+  </g>
+
+  <!-- TS: no silver emblem bevel, only the thin dark/gold edge visible in the
+       Tiberian Sun lettering reference. -->
+  <g stroke-linejoin="miter" filter="url(#shadow)">
+    <use href="#tShape" transform="translate(7 9)" fill="url(#orangeDepth)" stroke="#160b04" stroke-width="8"/>
+    <use href="#sShape" transform="translate(7 9)" fill="url(#orangeDepth)" stroke="#160b04" stroke-width="8"/>
+  </g>
+  <g fill="url(#orangeFace)" stroke="#6f2a00" stroke-width="5" stroke-linejoin="miter" filter="url(#grain)">
+    <use href="#tShape"/>
+    <use href="#sShape"/>
+  </g>
+  <g fill="none" stroke="#ffb72c" stroke-width="2.5" stroke-linejoin="miter" opacity="0.9">
+    <use href="#tShape"/>
+    <use href="#sShape"/>
+  </g>
+</svg>

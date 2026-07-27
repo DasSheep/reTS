@@ -1,0 +1,8 @@
+{
+  "label": "Campaign & scenarios",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "description": "Verified single-player campaign machinery of the original engine — how a won mission chooses the next one, what carries across the transition, and the scenario variable store triggers read and write."
+  }
+}

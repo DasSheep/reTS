@@ -1,0 +1,25 @@
+# Line-ending policy.
+#
+# The repository canonical form is LF. `text=auto` makes git normalize CRLF -> LF
+# on commit and convert back to each platform's native ending on checkout, so the
+# same working tree can be used from Windows (the primary dev platform, CRLF) and
+# Linux/macOS (LF) without either side producing phantom whole-file diffs.
+* text=auto
+
+# --- Scripts that must keep a fixed ending regardless of platform ---
+*.sh   text eol=lf
+*.cmd  text eol=crlf
+*.bat  text eol=crlf
+*.ps1  text eol=crlf
+
+# --- Binary assets: never convert line endings, never diff as text ---
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.woff binary
+*.woff2 binary
+*.ttf  binary
+*.zip  binary
+*.gz   binary
