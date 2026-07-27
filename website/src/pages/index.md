@@ -41,7 +41,7 @@ extensions can build on it.
 | Economy (harvest / refine / tech tree) | <progress className="tracker" value="12" max="100" /> | 12% |
 | House & skirmish AI (build order / teams / triggers) | <progress className="tracker" value="17" max="100" /> | 17% |
 | Campaign / scenario (triggers / tags / objectives) | <progress className="tracker" value="16" max="100" /> | 16% |
-| Presentation / rendering (iso / SHP / VXL / shroud) | <progress className="tracker" value="6" max="100" /> | 6% |
+| Presentation / rendering (iso / SHP / VXL / shroud) | <progress className="tracker" value="8" max="100" /> | 8% |
 | Audio (SFX / EVA / music) | <progress className="tracker" value="12" max="100" /> | 12% |
 | Shell / UI (menus / sidebar / build queue) | <progress className="tracker" value="6" max="100" /> | 6% |
 | Multiplayer / netcode (lobby / lockstep / replay) | <progress className="tracker" value="3" max="100" /> | 3% |
@@ -65,21 +65,21 @@ extensions can build on it.
 
 | Of all 23,808 functions across the lineage | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="10" max="100" /> | 2,448 (10.3%) |
-| Analyzed in depth | <progress className="tracker" value="2" max="100" /> | 490 (2.1%) |
-| In verified reimplementation code | <progress className="tracker" value="4" max="100" /> | 981 (4.1%) |
+| Located in the RE record | <progress className="tracker" value="10" max="100" /> | 2,461 (10.3%) |
+| Analyzed in depth | <progress className="tracker" value="2" max="100" /> | 491 (2.1%) |
+| In verified reimplementation code | <progress className="tracker" value="4" max="100" /> | 985 (4.1%) |
 
 | Of the 9,015 substantive functions | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="15" max="100" /> | 1,346 (14.9%) |
-| Analyzed in depth | <progress className="tracker" value="4" max="100" /> | 340 (3.8%) |
-| In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 551 (6.1%) |
+| Located in the RE record | <progress className="tracker" value="15" max="100" /> | 1,350 (15.0%) |
+| Analyzed in depth | <progress className="tracker" value="4" max="100" /> | 341 (3.8%) |
+| In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 554 (6.1%) |
 
 | Substantive surface located, per engine | | |
 |---|---|----:|
-| YR | <progress className="tracker" value="21" max="100" /> | 714 / 3,345 (21.3%) |
-| RA2 | <progress className="tracker" value="9" max="100" /> | 274 / 3,181 (8.6%) |
-| TS | <progress className="tracker" value="14" max="100" /> | 358 / 2,489 (14.4%) |
+| YR | <progress className="tracker" value="21" max="100" /> | 715 / 3,345 (21.4%) |
+| RA2 | <progress className="tracker" value="9" max="100" /> | 276 / 3,181 (8.7%) |
+| TS | <progress className="tracker" value="14" max="100" /> | 359 / 2,489 (14.4%) |
 <!-- re-coverage:end -->
 
 ## Explore
