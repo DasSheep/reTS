@@ -41,7 +41,7 @@ extensions can build on it.
 | Economy (harvest / refine / tech tree) | <progress className="tracker" value="12" max="100" /> | 12% |
 | House & skirmish AI (build order / teams / triggers) | <progress className="tracker" value="17" max="100" /> | 17% |
 | Campaign / scenario (triggers / tags / objectives) | <progress className="tracker" value="16" max="100" /> | 16% |
-| Presentation / rendering (iso / SHP / VXL / shroud) | <progress className="tracker" value="13" max="100" /> | 13% |
+| Presentation / rendering (iso / SHP / VXL / shroud) | <progress className="tracker" value="14" max="100" /> | 14% |
 | Audio (SFX / EVA / music) | <progress className="tracker" value="12" max="100" /> | 12% |
 | Shell / UI (menus / sidebar / build queue) | <progress className="tracker" value="6" max="100" /> | 6% |
 | Multiplayer / netcode (lobby / lockstep / replay) | <progress className="tracker" value="3" max="100" /> | 3% |
@@ -65,21 +65,21 @@ extensions can build on it.
 
 | Of all 23,808 functions across the lineage | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="10" max="100" /> | 2,491 (10.5%) |
+| Located in the RE record | <progress className="tracker" value="10" max="100" /> | 2,497 (10.5%) |
 | Analyzed in depth | <progress className="tracker" value="2" max="100" /> | 495 (2.1%) |
-| In verified reimplementation code | <progress className="tracker" value="4" max="100" /> | 997 (4.2%) |
+| In verified reimplementation code | <progress className="tracker" value="4" max="100" /> | 999 (4.2%) |
 
 | Of the 9,015 substantive functions | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="15" max="100" /> | 1,366 (15.2%) |
+| Located in the RE record | <progress className="tracker" value="15" max="100" /> | 1,368 (15.2%) |
 | Analyzed in depth | <progress className="tracker" value="4" max="100" /> | 342 (3.8%) |
-| In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 558 (6.2%) |
+| In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 560 (6.2%) |
 
 | Substantive surface located, per engine | | |
 |---|---|----:|
 | YR | <progress className="tracker" value="21" max="100" /> | 718 / 3,345 (21.5%) |
 | RA2 | <progress className="tracker" value="9" max="100" /> | 282 / 3,181 (8.9%) |
-| TS | <progress className="tracker" value="15" max="100" /> | 366 / 2,489 (14.7%) |
+| TS | <progress className="tracker" value="15" max="100" /> | 368 / 2,489 (14.8%) |
 <!-- re-coverage:end -->
 
 ## Explore
