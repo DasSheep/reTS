@@ -65,13 +65,13 @@ extensions can build on it.
 
 | Of all 23,808 functions across the lineage | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="11" max="100" /> | 2,525 (10.6%) |
-| Analyzed in depth | <progress className="tracker" value="2" max="100" /> | 499 (2.1%) |
-| In verified reimplementation code | <progress className="tracker" value="4" max="100" /> | 1,008 (4.2%) |
+| Located in the RE record | <progress className="tracker" value="11" max="100" /> | 2,531 (10.6%) |
+| Analyzed in depth | <progress className="tracker" value="2" max="100" /> | 500 (2.1%) |
+| In verified reimplementation code | <progress className="tracker" value="4" max="100" /> | 1,013 (4.3%) |
 
 | Of the 9,015 substantive functions | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="15" max="100" /> | 1,384 (15.4%) |
+| Located in the RE record | <progress className="tracker" value="15" max="100" /> | 1,385 (15.4%) |
 | Analyzed in depth | <progress className="tracker" value="4" max="100" /> | 346 (3.8%) |
 | In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 566 (6.3%) |
 
@@ -79,7 +79,7 @@ extensions can build on it.
 |---|---|----:|
 | YR | <progress className="tracker" value="22" max="100" /> | 723 / 3,345 (21.6%) |
 | RA2 | <progress className="tracker" value="9" max="100" /> | 288 / 3,181 (9.1%) |
-| TS | <progress className="tracker" value="15" max="100" /> | 373 / 2,489 (15.0%) |
+| TS | <progress className="tracker" value="15" max="100" /> | 374 / 2,489 (15.0%) |
 <!-- re-coverage:end -->
 
 ## Explore

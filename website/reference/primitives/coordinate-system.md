@@ -3,12 +3,22 @@ sidebar_position: 1
 title: "Coordinate system: cells, leptons, and distance"
 description: >-
   How the original engine measures space — map cells, sub-cell leptons, the cell↔world conversion, 16-bit facing, and the distance measure that feeds range checks. Verified across Tiberian Sun, Red Alert 2, and Yuri's Revenge.
-last_verified: 2026-07-21
+last_verified: 2026-07-28
 ---
 
 # Coordinate system: cells, leptons, and distance
 
-*Last verified: 2026-07-21. Version coverage: the cell/lepton conversions, facing values, and the building-footprint distance adjustment are **identical across Tiberian Sun, Red Alert 2, and Yuri's Revenge**. The one exception is the object-to-object distance measure: **Yuri's Revenge computes it in 2D** (ignoring height), while **Tiberian Sun and Red Alert 2 compute it in true 3D**. That single divergence is described in full below.*
+*Last verified: 2026-07-28. Version coverage: everything on this page — the cell/lepton conversions, facing values, the distance measures and the building-footprint adjustment — is **identical across Tiberian Sun, Red Alert 2, and Yuri's Revenge**.*
+
+:::warning Correction — 2026-07-28
+
+**An earlier version of this page (2026-07-21) claimed that Yuri's Revenge measures object distance in 2D while Tiberian Sun and Red Alert 2 measure it in 3D, and that "every Yuri's Revenge range check treats the world as flat." That was wrong, and it has been retracted.**
+
+All three games ship **both** a 3D distance measure and a height-ignoring one, and in all three the 3D measure is the general-purpose one that ordinary range checks call. The error came from comparing differently-named functions across the three executables: in the Tiberian Sun symbol data the *3D* routine carries the plain "distance" name, while in the Yuri's Revenge data that name lands on the *height-ignoring* routine — so matching by name compared two different operations and produced a divergence that is not in the binaries.
+
+The corrected description is below, re-derived from the raw disassembly of all three executables and confirmed by executing the actual retail code.
+
+:::
 
 Every spatial system in the engine — movement, range, weapon reach, targeting, spread — is built on two units and the conversion between them. This entry documents those units, the exact conversion arithmetic (including where it does **not** round the way you might expect), the 16-bit facing value, and the distance function that range checks call.
 
@@ -87,16 +97,16 @@ The subtraction `target − initial` wraps in 16 bits, which is what lets a unit
 
 ## Distance between objects
 
-Range checks — "is the target in weapon range?", "is it close enough to attack?" — call a single distance measure between two objects. Its shape is fixed, but one step differs by game.
+Range checks — "is the target in weapon range?", "is it close enough to attack?" — call a distance measure between two objects. There are **two** such measures, and each game has both. They share every step except one: whether the height delta enters the sum.
 
 ```mermaid
 flowchart TD
   A[distance from A to target] --> B{target is null?}
   B -- yes --> Z[return 0]
-  B -- no --> C[dx, dy from the two coordinates]
-  C --> D{game}
-  D -- "Yuri's Revenge" --> E["squared = dx² + dy²<br/>(2D — height ignored)"]
-  D -- "TS / Red Alert 2" --> F["squared = dx² + dy² + dz²<br/>(3D)"]
+  B -- no --> C[deltas from the two coordinates]
+  C --> D{which measure did the caller ask for?}
+  D -- "3D distance<br/>(the general-purpose one)" --> F["squared = dx² + dy² + dz²"]
+  D -- "planar distance<br/>(aircraft mission checks)" --> E["squared = dx² + dy²<br/>(height ignored)"]
   E --> G[approximate square root]
   F --> G
   G --> H[truncate toward zero]
@@ -106,20 +116,34 @@ flowchart TD
   J --> K
 ```
 
+The choice is made by the **call site**, not by the game. Both routines exist, unchanged, in Tiberian Sun, Red Alert 2 and Yuri's Revenge.
+
 Several details of this measure are worth stating exactly:
 
 - **A null target returns distance 0.**
 - **The square root is approximate.** The engine does not call a precise square root; it uses a fast table-based approximation and then truncates the result toward zero. This is **gameplay-visible**: two objects separated by exactly 255 leptons along one axis report a distance of **254**, because the approximate root of `255 × 255` comes out just under 255 and truncation drops it. A separation of exactly 256 leptons (one full cell) reports exactly **256**. The error is small and bounded, but it is real and it is part of the engine's behavior.
 - **Buildings are measured to their footprint, not their origin.** If the target is a building, the engine subtracts `64 × (foundation_width + foundation_height)` from the raw distance and clamps any negative result to 0 — so large structures are effectively "closer" than their reference point, by an amount that scales with their footprint. This building adjustment is identical in all three games and is applied after whichever raw distance the game computed.
 
-### The 2D-vs-3D divergence (the one cross-version difference)
+### Where the planar measure is used
 
-This is the single place where the three games disagree:
+The height-ignoring measure is rare and deliberate. In every one of the three games, its callers are **aircraft mission handlers** — the approach and overfly checks that ask "has this plane reached the point it was sent to?" For an aircraft holding altitude, including the height delta would mean the plane never arrives, so ignoring it is the point of the check.
 
-- **Yuri's Revenge** computes the raw distance in **2D** — it forms the X and Y deltas, sums their squares, and ignores the Z (height) delta entirely. **Every Yuri's Revenge range check therefore treats the world as flat.** A target directly above or below the firer at the same map position reads as distance 0 before the building adjustment.
-- **Tiberian Sun and Red Alert 2** compute the raw distance in **true 3D** — they include the squared Z delta, so height genuinely counts toward range.
+Counting direct calls to each measure:
 
-This was confirmed by comparing the two code paths directly: the Yuri's Revenge routine sums two squared terms, the Tiberian Sun and Red Alert 2 routines sum three, and the surrounding logic is otherwise line-for-line the same. It is not a quirk to toggle on or off — it is simply the correct behavior of each game, and it has real consequences for cliff and air interactions in the 3D-distance games.
+| measure | Tiberian Sun | Red Alert 2 | Yuri's Revenge |
+|---|---|---|---|
+| 3D distance | 30 | 26 | 26 |
+| planar (height-ignoring) | 2 | 4 | 6 |
+
+The planar set grows because each game adds aircraft missions the previous one did not have: Red Alert 2 adds the paradrop approach and overfly pair, and Yuri's Revenge adds the spy plane approach and overfly pair. Tiberian Sun contains no paradrop or spy plane mission at all. **No routine that exists in more than one game switches between the two measures** — this is a difference in which missions exist, not in how any given check is computed.
+
+Ordinary weapon range, targeting and threat evaluation use the 3D measure in all three games, so **height genuinely counts toward range everywhere**, including in Yuri's Revenge.
+
+### Two more members of the same family
+
+Alongside the two measures above, each game carries **two further routines** that compute the *squared* planar distance in plain integer arithmetic — no square root, no truncation, no building adjustment. Callers that only need to compare distances use these and compare against squared thresholds, avoiding the approximate root entirely.
+
+One detail is worth recording because it settles intent: both of these routines **read the height field and then discard it without using it**. They are planar by construction, not by an oversight that a later game might have corrected.
 
 ## What this entry does not claim
 
