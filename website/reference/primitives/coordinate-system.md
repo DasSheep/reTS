@@ -126,7 +126,7 @@ Several details of this measure are worth stating exactly:
 
 ### Where the planar measure is used
 
-The height-ignoring measure is rare and deliberate. In every one of the three games, its callers are **aircraft mission handlers** — the approach and overfly checks that ask "has this plane reached the point it was sent to?" For an aircraft holding altitude, including the height delta would mean the plane never arrives, so ignoring it is the point of the check.
+The height-ignoring measure is rare and deliberate. In every one of the three games, its callers are **aircraft mission handlers** — the approach and overfly checks that ask "has this plane reached the point it was sent to?" For an aircraft holding altitude, including the height delta would keep the reported distance permanently above the arrival threshold, so ignoring it is the point of the check.
 
 Counting direct calls to each measure:
 
