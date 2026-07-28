@@ -24,9 +24,9 @@ extensions can build on it.
 <!-- progress:start -->
 <!-- Generated from the project's progress tracker - do not hand-edit this block. -->
 
-**≈22%** of the way to a fully-playable, faithful Red Alert 2 / Yuri's Revenge engine, end to end *(excludes mod-compatibility scope)*.
+**≈23%** of the way to a fully-playable, faithful Red Alert 2 / Yuri's Revenge engine, end to end *(excludes mod-compatibility scope)*.
 
-<progress className="tracker tracker-overall" value="22" max="100" />
+<progress className="tracker tracker-overall" value="23" max="100" />
 
 | Area | | Done |
 |------|---|----:|
@@ -41,7 +41,7 @@ extensions can build on it.
 | Economy (harvest / refine / tech tree) | <progress className="tracker" value="12" max="100" /> | 12% |
 | House & skirmish AI (build order / teams / triggers) | <progress className="tracker" value="17" max="100" /> | 17% |
 | Campaign / scenario (triggers / tags / objectives) | <progress className="tracker" value="16" max="100" /> | 16% |
-| Presentation / rendering (iso / SHP / VXL / shroud) | <progress className="tracker" value="10" max="100" /> | 10% |
+| Presentation / rendering (iso / SHP / VXL / shroud) | <progress className="tracker" value="12" max="100" /> | 12% |
 | Audio (SFX / EVA / music) | <progress className="tracker" value="12" max="100" /> | 12% |
 | Shell / UI (menus / sidebar / build queue) | <progress className="tracker" value="6" max="100" /> | 6% |
 | Multiplayer / netcode (lobby / lockstep / replay) | <progress className="tracker" value="3" max="100" /> | 3% |
@@ -65,21 +65,21 @@ extensions can build on it.
 
 | Of all 23,808 functions across the lineage | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="10" max="100" /> | 2,469 (10.4%) |
+| Located in the RE record | <progress className="tracker" value="10" max="100" /> | 2,481 (10.4%) |
 | Analyzed in depth | <progress className="tracker" value="2" max="100" /> | 492 (2.1%) |
-| In verified reimplementation code | <progress className="tracker" value="4" max="100" /> | 990 (4.2%) |
+| In verified reimplementation code | <progress className="tracker" value="4" max="100" /> | 995 (4.2%) |
 
 | Of the 9,015 substantive functions | | |
 |---|---|----:|
-| Located in the RE record | <progress className="tracker" value="15" max="100" /> | 1,353 (15.0%) |
+| Located in the RE record | <progress className="tracker" value="15" max="100" /> | 1,359 (15.1%) |
 | Analyzed in depth | <progress className="tracker" value="4" max="100" /> | 341 (3.8%) |
-| In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 556 (6.2%) |
+| In verified reimplementation code | <progress className="tracker" value="6" max="100" /> | 558 (6.2%) |
 
 | Substantive surface located, per engine | | |
 |---|---|----:|
 | YR | <progress className="tracker" value="21" max="100" /> | 715 / 3,345 (21.4%) |
-| RA2 | <progress className="tracker" value="9" max="100" /> | 278 / 3,181 (8.7%) |
-| TS | <progress className="tracker" value="14" max="100" /> | 360 / 2,489 (14.5%) |
+| RA2 | <progress className="tracker" value="9" max="100" /> | 279 / 3,181 (8.8%) |
+| TS | <progress className="tracker" value="15" max="100" /> | 365 / 2,489 (14.7%) |
 <!-- re-coverage:end -->
 
 ## Explore
