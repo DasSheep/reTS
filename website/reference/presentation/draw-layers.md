@@ -4,6 +4,7 @@ title: Draw-layer submission and Y-order
 description: >-
   The five draw layers, Ground-only depth sorting, and stable equal-key ordering. Verified: TS/Firestorm, Red Alert 2, Yuri's Revenge.
 last_verified: 2026-07-16
+draft: true
 ---
 
 # Draw-layer submission and Y-order

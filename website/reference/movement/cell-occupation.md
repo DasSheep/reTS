@@ -4,6 +4,7 @@ title: Cell occupation and sub-cell spots
 description: >-
   How each cell records what stands on it — ground and bridge occupancy layers, the four infantry sub-cell spots, the owner stamp, and the cell-entry verdict pathfinding shares. Verified: Tiberian Sun, Red Alert 2, and Yuri's Revenge.
 last_verified: 2026-07-26
+draft: true
 ---
 
 # Cell occupation and sub-cell spots

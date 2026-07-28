@@ -2,76 +2,69 @@
 slug: /
 sidebar_position: 1
 title: Original Engine Reference
-last_verified: 2026-07-16
+description: >-
+  The Engine Reference is withdrawn while every published claim is re-derived from the retail binaries.
+last_verified: 2026-07-28
 ---
 
-import DocCardList from '@theme/DocCardList';
+# Original Engine Reference — withdrawn pending re-verification
 
-# Original Engine Reference — digital archaeology of the original engine
+**Every entry in this section has been taken down.** Nothing here is being served
+while we re-derive its claims from the retail executables.
 
-A reference encyclopedia documenting the **original** Westwood isometric engine
-for the **Command & Conquer** titles Tiberian Sun, Red Alert 2, and Yuri's
-Revenge **exactly as it is** — its INI logic, tags, mechanics, and formulas.
+## Why
 
-This section is **not** about reTS usage or modding (see [For modders](/docs/modders/overview))
-and **not** the project's story (see the [Devblog](/devblog)). It documents the
-*original game engine as-is* — the way [ModEnc](https://modenc.renegadeprojects.com/)
-does for the community.
+This section is held to a stricter bar than the rest of the site: every statement
+is supposed to trace to a finding verified against the original game binaries,
+with an independent pass whose job is to *falsify* each claim before it ships.
 
-*Last verified against the publication workflow and current reference catalog:
-2026-07-16.*
+On 28 July 2026 we found that a published entry had failed that bar. The
+coordinate-system entry stated that *Yuri's Revenge* measures distance between
+objects in 2D while *Tiberian Sun* and *Red Alert 2* measure it in 3D, and that
+"every Yuri's Revenge range check therefore treats the world as flat."
 
-## What makes this different
+**Both statements were false.** All three games ship both measures, with the same
+code. The error came from comparing differently-named functions across the three
+executables: in one game's symbol data the plain "distance" name sits on the 3D
+routine, in another it sits on the height-ignoring one — so matching by name
+compared two different operations and produced a difference that is not in the
+games.
 
-Every entry published here must be **binary-verified**. It describes only the
-version coverage established by the underlying study; pending versions and
-incomplete systems stay unpublished.
+The claim had been public for a year.
 
-Reverse-engineering treats **Tiberian Sun, Red Alert 2, and Yuri's Revenge as
-equal first-class targets** — because these are one engine evolved across the
-three releases, a system is reversed from whichever release carries it most
-completely (often the latest, but Tiberian-Sun-first where TS is the richer
-implementation that later releases pared down), then reconciled against the
-others. Each entry then states, on its own terms, whether all three were
-separately confirmed, confirmed divergent, or are not yet checked. Never assume a
-claim carries across games unless that entry's version-coverage line says so.
+## Why the whole section, and not just that entry
 
-:::important Publishing gate
-A system receives an entry only after it is fully reversed, implemented,
-oracle-tested, and closed as complete. Each claim then receives an independent
-skeptic pass whose job is to falsify it. Unsupported statements are removed, not
-softened into guesses.
-:::
+Because the process that let it through was followed correctly. The review
+checked that the published page faithfully matched our internal research note —
+which it did. What nobody re-checked was the research note against the binary.
+Every entry on this site went through that same review, so correcting one page
+would have been a guess about how far the problem goes.
 
-## Published entries
+When we went looking, the first three entries we re-derived each turned up
+something: a second invented difference between games, a set of caller counts
+that were wrong, and a claim about alliance behaviour that was not just published
+but had been written into our reimplementation and locked in by a passing test.
 
-The catalog below is generated from the section tree itself, so it is always
-current — every card links a system area; each entry's card states its own
-version coverage.
+We would rather serve nothing than serve claims we cannot currently stand behind.
 
-<DocCardList />
+## What happens now
 
-## How it's organized
+Every entry is being re-derived from the disassembly of all three executables —
+not re-read against our own notes. Alongside that we have added checks that block
+publication when a claim rests only on a function name, when a statement covers
+more ground than its evidence, when a cross-game comparison is not pinned by
+addresses, or when a comparison never asks which code actually calls the routine.
 
-- **By engine system** — combat, movement, economy, object/world, AI, presentation, …
-- **Per entry** — the behavior, the relevant INI tag(s)/flag(s), the formula where
-  one applies, cross-version notes (TS / RA2 / YR differences), and a verification
-  confidence.
+Entries will return one at a time, as each is re-verified. There is no schedule;
+an entry comes back when it is right.
 
-The goal: an accurate, approachable encyclopedia of how the original engine works —
-useful to players, modders, and anyone curious about the machinery underneath.
+## If you were relying on something here
 
-## Accuracy & corrections
+The withdrawn entries remain in this site's git history, and the corrected
+coordinate-system entry — including its retraction notice — is in the commit log.
+If a specific entry matters to you, or you can falsify something we published,
+please open an issue on the [reTS repository](https://github.com/DasSheep/reTS/issues).
+Reports are treated as verification input and checked against the binaries.
 
-Every entry traces to reverse-engineering of the **retail binaries** — the binary
-is the sole source of truth here. Community references (wikis, forums) are used only
-to corroborate, never as the source. We document only systems we have **fully
-reverse-engineered and reimplemented**, each claim is checked adversarially before
-it ships, and where a finding **differs from long-held community understanding**,
-it's because the behavior was verified directly against the game's own code.
-
-We hold this section to a higher bar than the rest of the site precisely because
-this community knows these games deeply. If you spot something wrong or incomplete,
-please [open an issue](https://github.com/DasSheep/reTS/issues) — corrections are
-re-verified against the binary, and well-founded ones are exactly how a reference
-like this earns trust.
+The rest of the site — the [project documentation](/docs/intro) and the
+[devblog](/devblog) — is unaffected.

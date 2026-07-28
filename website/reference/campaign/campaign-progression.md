@@ -8,6 +8,7 @@ description: >-
   Red Alert 2, Yuri's Revenge — identical mechanism, with one pinned capacity
   divergence in Yuri's Revenge's local-variable array.
 last_verified: 2026-07-25
+draft: true
 ---
 
 # Campaign progression, mission win, and the variable store

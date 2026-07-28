@@ -4,6 +4,7 @@ title: Skirmish and LAN game options
 description: >-
   How the original engine saves and restores skirmish, LAN, and Westwood Online game-setup options as an INI preference block. Verified: Tiberian Sun, Red Alert 2, Yuri's Revenge.
 last_verified: 2026-07-21
+draft: true
 ---
 
 # Skirmish and LAN game options

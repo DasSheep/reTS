@@ -4,6 +4,7 @@ title: The [IQ] switchboard
 description: >-
   The rules-file [IQ] block that assigns a difficulty rung to each autonomous AI behavior, the per-house IQ scalar compared against it, and which of the ten shipped behaviors actually has a live gate. Verified: Tiberian Sun, Red Alert 2, Yuri's Revenge — identical mechanism.
 last_verified: 2026-07-25
+draft: true
 ---
 
 # The [IQ] switchboard

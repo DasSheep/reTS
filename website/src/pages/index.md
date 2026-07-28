@@ -88,5 +88,5 @@ extensions can build on it.
 - 🎮 **[For players](/docs/users/overview)** — current release availability.
 - 🛠️ **[For modders](/docs/modders/overview)** — the planned authoring direction.
 - 🧩 **[For contributors](/docs/contributing/overview)** — architecture and source-release status.
-- 🏺 **[Original Engine Reference](/reference)** — verified-only original-engine behavior.
+- 🏺 **[Original Engine Reference](/reference)** — ⚠ **withdrawn** pending re-verification against the binaries.
 - ✍️ **[Devblog](/devblog)** — the reverse-engineering → modernization journey.

@@ -4,6 +4,7 @@ title: Map and cell grid
 description: >-
   The engine's spatial floor - the cell array and its indexing, the per-cell height model, map bounds, LandType derivation, and the [Land] movement-cost table. Verified: Tiberian Sun, Red Alert 2, Yuri's Revenge.
 last_verified: 2026-07-23
+draft: true
 ---
 
 # Map and cell grid

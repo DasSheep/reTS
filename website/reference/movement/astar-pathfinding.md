@@ -5,6 +5,7 @@ description: >-
   How the original engine finds a ground unit's path — the A* search, its movement-cost
   weights, tie-break rules, termination caps, and the corner-smoothing that shapes the final route.
 last_verified: 2026-07-21
+draft: true
 ---
 
 # A* pathfinding

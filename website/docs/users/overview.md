@@ -19,7 +19,8 @@ page records availability instead of speculative guidance.
 ## Available now
 
 - The **[Devblog](/devblog)** follows verified engine milestones and design work.
-- The **[Engine Reference](/reference)** explains completed, verified slices of
+- The **[Engine Reference](/reference)** is **currently withdrawn** pending
+  re-verification. It explains completed, verified slices of
   original-engine behavior — spanning combat, rules interpretation, multiplayer
   synchronization, and presentation and UI systems so far — as new entries are
   approved.

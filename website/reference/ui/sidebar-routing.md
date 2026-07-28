@@ -4,6 +4,7 @@ title: Sidebar tab and column routing
 description: >-
   Cameo-to-partition routing across the four-tab (RA2/YR) and two-column (TS/Firestorm) sidebar eras. Verified: Tiberian Sun, Red Alert 2, Yuri's Revenge.
 last_verified: 2026-07-16
+draft: true
 ---
 
 # Sidebar tab and column routing

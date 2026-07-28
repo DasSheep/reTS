@@ -4,6 +4,7 @@ title: The randomizer — deterministic sequences
 description: >-
   The original engine's deterministic pseudo-random generator — table, indices, ranged draws, and the per-game divergences that keep the sequence identical. Verified: Tiberian Sun, Red Alert 2, Yuri's Revenge.
 last_verified: 2026-07-21
+draft: true
 ---
 
 # The randomizer: deterministic sequences

@@ -4,6 +4,7 @@ title: The Tiberian Sun ion storm
 description: >-
   An autonomous weather event exclusive to Tiberian Sun and Firestorm: a warning countdown, a per-frame two-stage random funnel that decides whether lightning strikes, and a weighted survey of the battlefield. Verified: Tiberian Sun and Firestorm; Red Alert 2 and Yuri's Revenge have no equivalent autonomous event.
 last_verified: 2026-07-25
+draft: true
 ---
 
 # The Tiberian Sun ion storm

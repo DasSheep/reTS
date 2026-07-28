@@ -4,6 +4,7 @@ title: Fixed-point math and frame timers
 description: >-
   How the original engine converts floats to integers, rescales fixed-point facing values between bit widths, and runs frame-counted countdown timers. Verified: Tiberian Sun, Red Alert 2, Yuri's Revenge.
 last_verified: 2026-07-21
+draft: true
 ---
 
 # Fixed-point math and frame timers

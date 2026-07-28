@@ -4,6 +4,7 @@ title: House alliances — the diplomacy relation
 description: >-
   How the engine decides whether two houses are allied, forms and breaks an alliance, and enforces the "can't ally your last enemy" rule and the AI coalition sweep. Verified: Tiberian Sun, Red Alert 2, Yuri's Revenge — with two documented divergences.
 last_verified: 2026-07-25
+draft: true
 ---
 
 # House alliances — the diplomacy relation

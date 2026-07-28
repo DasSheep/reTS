@@ -7,6 +7,7 @@ description: >-
   treat that house differently. Verified in full for Yuri's Revenge; Red Alert 2 reconciled for
   the identity core and the statistics emitters; Tiberian Sun contains no such mechanism at all.
 last_verified: 2026-07-25
+draft: true
 ---
 
 # Observer mode

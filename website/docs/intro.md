@@ -23,9 +23,9 @@ and native modding tools are not publicly released yet.
 - A headless, deterministic simulation core: engine systems are reverse-engineered
   from the retail binaries, ported, and pinned by binary-derived oracle tests
   before anything is considered done.
-- The verified slice of that work is published as it completes in the
-  [Original Engine Reference](/reference), which now spans combat, data/rules
-  interpretation, presentation and UI, and multiplayer synchronization systems.
+- The [Original Engine Reference](/reference) is **currently withdrawn**: every
+  entry has been taken down while its claims are re-derived from the retail
+  executables. Entries return one at a time, as each is re-verified.
 - The [Devblog](/devblog) narrates the reverse-engineering and build work as it
   happens, system by system.
 - None of this adds up to a playable game yet — there is no public client,
@@ -52,7 +52,7 @@ and native modding tools are not publicly released yet.
 | **Players** | Someone who wants to run and play reTS | [For players](/docs/users/overview) |
 | **Modders** | A map/mission/game-mode/content author | [For modders](/docs/modders/overview) |
 | **Contributors** | A developer who wants to build on reTS | [For contributors](/docs/contributing/overview) |
-| **Engine researchers** | Someone looking for verified original-engine behavior | [Original Engine Reference](/reference) |
+| **Engine researchers** | Someone looking for verified original-engine behavior | [Original Engine Reference](/reference) — **withdrawn pending re-verification** |
 | **Project followers** | Someone following milestones and design decisions | [Devblog](/devblog) |
 
 Each stream publishes only what its audience can use now. Player, modder, and

@@ -4,6 +4,7 @@ title: Tactical world-to-client projection
 description: >-
   World-to-client isometric projection, height adjustment, and the inverse mapping. Verified: TS/Firestorm, Red Alert 2, Yuri's Revenge.
 last_verified: 2026-07-21
+draft: true
 ---
 
 # Tactical world-to-client projection

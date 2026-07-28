@@ -4,6 +4,7 @@ title: Warhead rules interpretation
 description: >-
   How [Warhead] INI values are read, overlaid, and mapped to each game's own field surface. Verified: Tiberian Sun, Red Alert 2, Yuri's Revenge.
 last_verified: 2026-07-16
+draft: true
 ---
 
 # Warhead rules interpretation

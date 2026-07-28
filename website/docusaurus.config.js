@@ -208,13 +208,13 @@ const config = {
             label: 'Docs',
           },
           { to: '/docs/modders/overview', label: 'Modding', position: 'left' },
-          {
-            type: 'docSidebar',
-            sidebarId: 'referenceSidebar',
-            docsPluginId: 'reference',
-            position: 'left',
-            label: 'Original Engine Reference',
-          },
+          // The Engine Reference is WITHDRAWN pending re-verification (2026-07-28).
+          // Every entry is `draft: true`, so the sidebar this pointed at is empty
+          // and the section is no longer advertised. `/reference` still resolves —
+          // it serves the withdrawal notice, which keeps the existing in-content
+          // links (two published devblog posts, the docs intro, the homepage)
+          // working and gives a reader who follows one an explanation rather than
+          // a 404. Restore this entry when entries start returning.
           { to: '/devblog', label: 'Devblog', position: 'left' },
           {
             href: 'https://github.com/DasSheep/reTS',
@@ -238,7 +238,7 @@ const config = {
           {
             title: 'Project',
             items: [
-              { label: 'Original Engine Reference', to: '/reference' },
+              { label: 'Engine Reference (withdrawn)', to: '/reference' },
               { label: 'Devblog', to: '/devblog' },
               { label: 'GitHub', href: 'https://github.com/DasSheep/reTS' },
             ],

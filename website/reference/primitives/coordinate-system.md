@@ -4,6 +4,7 @@ title: "Coordinate system: cells, leptons, and distance"
 description: >-
   How the original engine measures space — map cells, sub-cell leptons, the cell↔world conversion, 16-bit facing, and the distance measure that feeds range checks. Verified across Tiberian Sun, Red Alert 2, and Yuri's Revenge.
 last_verified: 2026-07-28
+draft: true
 ---
 
 # Coordinate system: cells, leptons, and distance

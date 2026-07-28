@@ -4,6 +4,7 @@ title: Nearest-valid-spot placement (NearByLocation)
 description: >-
   How the original engine finds the nearest cell that satisfies a placement filter chain — a square-ring scan with a fixed candidate order, cap, and tie-break. Verified: Tiberian Sun, Red Alert 2, Yuri's Revenge.
 last_verified: 2026-07-21
+draft: true
 ---
 
 # Nearest-valid-spot placement (NearByLocation)
