@@ -165,7 +165,7 @@ the harvester's stateful failure, the clamp that goes loud instead of silent,
 and the evaluator that fires on a house that isn't there — none of them the
 answer the plausible reading would have written. That discipline is exactly
 what gates publication, so as those systems close out they join the
-[Engine Reference](/reference), where four more completed entries went live
+Engine Reference, where four more completed entries went live
 today: how draw layers are filed and sorted before a frame renders, how the
 tactical view projects world space to screen space, how the sidebar routes
 its commands, and how warhead rules are resolved. Each one only publishes

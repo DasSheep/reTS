@@ -58,7 +58,8 @@ const config = {
     '@docusaurus/theme-mermaid',
     // Offline, zero-infra client-side search — indexed at build time (right
     // fit for a static GH-Pages site; no server, unlike Typesense/Algolia).
-    // Covers BOTH docs instances (docs + reference), the devblog, and pages.
+    // Covers the docs instance, the devblog, and pages. (The Engine Reference
+    // docs instance was removed 2026-07-28; its route no longer exists.)
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
@@ -67,8 +68,8 @@ const config = {
         indexDocs: true,
         indexBlog: true,
         indexPages: true,
-        docsRouteBasePath: ['docs', 'reference'],
-        docsDir: ['docs', 'reference'],
+        docsRouteBasePath: ['docs'],
+        docsDir: ['docs'],
         blogRouteBasePath: 'devblog',
         blogDir: 'blog',
         highlightSearchTermsOnTargetPage: true,
@@ -125,21 +126,9 @@ const config = {
   ],
 
   plugins: [
-    // Separate "Original Engine Reference" docs instance — digital archaeology
-    // of the original engine (documents the original game as-is, distinct from
-    // reTS's own docs; the "Original" qualifier keeps it from being read as a
-    // reference for reTS's engine, and leaves that name free for future
-    // reTS-side architecture/contributor docs).
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'reference',
-        path: 'reference',
-        routeBasePath: 'reference',
-        sidebarPath: require.resolve('./sidebarsReference.js'),
-        editUrl: 'https://github.com/DasSheep/reTS/tree/main/website/',
-      },
-    ],
+    // The "Original Engine Reference" docs instance was removed 2026-07-28.
+    // Its source markdown stays in website/reference/ (unrouted, unbuilt) as the
+    // material for the re-verification pass; nothing under it is served.
     // Responsive/lazy images: wrap with <Image> from '@theme/IdealImage'.
     // Inert for plain markdown images; active in production builds only.
     '@docusaurus/plugin-ideal-image',
@@ -154,7 +143,7 @@ const config = {
       {
         siteTitle: 'reTS',
         siteDescription:
-          'A faithful, clean-room reimplementation of the Command & Conquer TS/RA2 engine — docs, Engine Reference, and devblog.',
+          'A faithful, clean-room reimplementation of the Command & Conquer TS/RA2 engine — docs and devblog.',
         content: {
           includeBlog: true,
           includePages: true,
@@ -208,13 +197,8 @@ const config = {
             label: 'Docs',
           },
           { to: '/docs/modders/overview', label: 'Modding', position: 'left' },
-          // The Engine Reference is WITHDRAWN pending re-verification (2026-07-28).
-          // Every entry is `draft: true`, so the sidebar this pointed at is empty
-          // and the section is no longer advertised. `/reference` still resolves —
-          // it serves the withdrawal notice, which keeps the existing in-content
-          // links (two published devblog posts, the docs intro, the homepage)
-          // working and gives a reader who follows one an explanation rather than
-          // a 404. Restore this entry when entries start returning.
+          // Engine Reference navbar entry removed 2026-07-28 along with its docs
+          // plugin instance; the /reference route no longer exists.
           { to: '/devblog', label: 'Devblog', position: 'left' },
           {
             href: 'https://github.com/DasSheep/reTS',
@@ -238,7 +222,6 @@ const config = {
           {
             title: 'Project',
             items: [
-              { label: 'Engine Reference (withdrawn)', to: '/reference' },
               { label: 'Devblog', to: '/devblog' },
               { label: 'GitHub', href: 'https://github.com/DasSheep/reTS' },
             ],

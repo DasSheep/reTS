@@ -17,7 +17,7 @@ extensions can build on it.
 
 > ⚠️ **Early and in active development.** There is no public engine source
 > release, playable build, or native authoring tool yet. The public surface today
-> is this documentation site, the growing Original Engine Reference, and the devblog.
+> is this documentation site and the devblog.
 
 ## How far along is it?
 
@@ -88,5 +88,4 @@ extensions can build on it.
 - 🎮 **[For players](/docs/users/overview)** — current release availability.
 - 🛠️ **[For modders](/docs/modders/overview)** — the planned authoring direction.
 - 🧩 **[For contributors](/docs/contributing/overview)** — architecture and source-release status.
-- 🏺 **[Original Engine Reference](/reference)** — ⚠ **withdrawn** pending re-verification against the binaries.
 - ✍️ **[Devblog](/devblog)** — the reverse-engineering → modernization journey.

@@ -19,11 +19,6 @@ page records availability instead of speculative guidance.
 ## Available now
 
 - The **[Devblog](/devblog)** follows verified engine milestones and design work.
-- The **[Engine Reference](/reference)** is **currently withdrawn** pending
-  re-verification. It explains completed, verified slices of
-  original-engine behavior — spanning combat, rules interpretation, multiplayer
-  synchronization, and presentation and UI systems so far — as new entries are
-  approved.
 - What exists behind the scenes is a headless, deterministic simulation core;
   none of it is packaged into anything installable yet.
 - This page will change from a status page to a guide only after a public build

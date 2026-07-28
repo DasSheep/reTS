@@ -225,7 +225,7 @@ work, not just this week's.
 All of that — the mission graph above, the carryover snapshot, the storm's
 own dice-roll ledger — plus three more systems this blog already covered,
 needed writing down properly for a reader without a disassembler. That's
-what the [Engine Reference](/reference) is for, and this week five entries
+what the Engine Reference is for, and this week five entries
 went live: the mission-and-carryover mechanics above, the ion storm, the AI
 difficulty-behavior switchboard, the house-alliance system, and native
 observer mode — the last three narrated here days ago, now given formal,

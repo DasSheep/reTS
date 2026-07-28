@@ -19,21 +19,9 @@ examples and API guides will publish only when the corresponding surface lands.
 ## What's inspectable today
 
 There's no runtime or API to write mods against yet, but the underlying research
-is already publishing as binary-verified, human-readable material a mod author or
-researcher can use right now:
+is well under way:
 
-- **[Engine Reference](/reference)** is a ModEnc-style encyclopedia of the
-  *original* engine's behavior. ⚠ It is **currently withdrawn** — every entry has
-  been taken down while its claims are re-derived from the retail executables,
-  after a published claim was found to be wrong. Entries return one at a time,
-  as each is re-verified.
-  The warhead-rules entry, for example, documented field-by-field which
-  `[Warhead]` keys exist on each of Tiberian Sun, Red Alert 2 and Yuri's Revenge,
-  their constructor defaults, and a session-type override — exactly the kind of
-  compatibility question that comes up when carrying a
-  `Verses=`/`CellSpread=`/`PercentAtMax=` definition between games. It is one of
-  the entries being re-derived, and will return when it is right.
-- That reference material is backed by a **fixed four-tool MCP capability gateway**
+- It is backed by a **fixed four-tool MCP capability gateway**
   (`find_capabilities` / `describe_capability` / `run_capability` / `verify_spec`)
   the project's own tooling uses to search, describe, and run every verified engine
   capability, and to re-run the full spec-as-oracle suite on demand. The gateway
